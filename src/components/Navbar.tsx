@@ -46,7 +46,7 @@ export function Navbar() {
             <Link href="/" onClick={handleNavClick} className="flex items-center group shrink-0 -my-4">
               <div className="h-20 md:h-24 lg:h-28 w-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
                 <img 
-                  src="/logo.png" 
+                  src={`${import.meta.env.BASE_URL}logo.png`} 
                   alt="Orion Infrastructure" 
                   className="h-full w-auto object-contain filter drop-shadow-md" 
                 />

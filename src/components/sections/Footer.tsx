@@ -19,7 +19,7 @@ export function Footer() {
             <Link href="/" className="flex items-center group w-fit -mt-2" onClick={scrollToTop}>
               <div className="h-28 md:h-36 w-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
                 <img 
-                  src="/logo.png" 
+                  src={`${import.meta.env.BASE_URL}logo.png`} 
                   alt="Orion Infrastructure" 
                   className="h-full w-auto object-contain filter drop-shadow-md" 
                 />

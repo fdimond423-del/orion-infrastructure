@@ -54,7 +54,7 @@ export function Loader() {
             className="relative w-56 h-64 sm:w-64 sm:h-72 flex items-center justify-center pointer-events-none"
           >
             <img 
-              src="/logo.png" 
+              src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="Orion Complete Logo" 
               className="w-full h-full object-contain mix-blend-screen filter drop-shadow-[0_0_35px_rgba(16,185,129,0.45)] transition-transform"
             />
