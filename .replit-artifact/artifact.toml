@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Orion Infrastructure"
+version = "1.0.0"
+id = "artifacts/orion-infrastructure"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23160
+
+[services.development]
+run = "pnpm --filter @workspace/orion-infrastructure run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/orion-infrastructure", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/orion-infrastructure/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23160"
+BASE_PATH = "/"
