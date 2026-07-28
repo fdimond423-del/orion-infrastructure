@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, TrendingUp, MapPin, Building2, Globe, Sparkles, PhoneCall, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const giftCityImage = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop";
 
@@ -74,7 +74,7 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2"
             >
               <Link
-                to="/opportunities"
+                href="/opportunities"
                 className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#007CDC] via-blue-600 to-emerald-500 text-white font-mono font-bold text-sm uppercase tracking-wider hover:shadow-[0_0_30px_rgba(0,124,220,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-lg"
               >
                 <span>EXPLORE GUJARAT ASSETS</span>
@@ -82,7 +82,7 @@ export function Hero() {
               </Link>
 
               <Link
-                to="/contact"
+                href="/contact"
                 className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white font-mono font-bold text-sm uppercase tracking-wider border border-white/20 backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2 hover:border-blue-400"
               >
                 <PhoneCall className="w-4 h-4 text-blue-400" />

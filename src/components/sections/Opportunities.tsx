@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ShieldCheck, TrendingUp, Building2, MapPin, CheckCircle, Sparkles, Filter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const categories = ['ALL CORRIDORS', 'GIFT CITY', 'AHMEDABAD APEX', 'DHOLERA SIR', 'SANAND INDUSTRIAL'];
 
@@ -187,7 +187,7 @@ export function Opportunities() {
                   {/* Action CTA Button */}
                   <div className="pt-2">
                     <Link
-                      to="/contact"
+                      href="/contact"
                       className="w-full py-4 px-6 rounded-2xl bg-[#0A1128] hover:bg-[#007CDC] text-white font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-between group/btn shadow-md transition-all duration-300"
                     >
                       <span>REQUEST CONFIDENTIAL DOSSIER & RERA AUDIT</span>
@@ -213,7 +213,7 @@ export function Opportunities() {
             </p>
           </div>
           <Link
-            to="/contact"
+            href="/contact"
             className="px-8 py-4 rounded-full bg-[#007CDC] hover:bg-blue-600 text-white font-mono font-extrabold text-xs uppercase tracking-widest shrink-0 shadow-[0_0_25px_rgba(0,124,220,0.5)] transition-all"
           >
             BOOK PRIVATE SYNDICATION CHAT

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { MapPin, ArrowRight, ShieldCheck, Zap, Building2, TrendingUp, Anchor, Cpu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const corridors = [
   {
@@ -164,7 +164,7 @@ export function Corridors() {
         {/* Bottom Institutional Link */}
         <div className="mt-16 text-center">
           <Link
-            to="/gujarat"
+            href="/gujarat"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] hover:bg-[#007CDC] text-white font-mono font-extrabold text-xs uppercase tracking-widest shadow-lg transition-all duration-300"
           >
             <span>VIEW DEEP-DIVE GUJARAT CORRIDOR REPORT</span>

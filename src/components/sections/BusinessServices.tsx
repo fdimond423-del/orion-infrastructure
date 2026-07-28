@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, ArrowUpRight, Shield, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const usBusinesses = [
   { name: 'Gas Stations & Travel Plazas', tag: 'High Liquid Surplus' },
@@ -80,7 +80,7 @@ export function BusinessServices() {
 
               <div className="pt-4">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#007CDC] to-blue-600 hover:from-blue-600 hover:to-[#007CDC] text-white font-mono font-extrabold text-xs uppercase tracking-widest shadow-[0_0_30px_rgba(0,124,220,0.5)] transition-all transform hover:-translate-y-0.5"
                 >
                   <span>BOOK ONE TRADE 360 ADVISORY SESSION</span>

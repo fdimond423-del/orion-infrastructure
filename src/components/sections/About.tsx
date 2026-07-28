@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, TrendingUp, Building2, Globe, CheckCircle2, Shield, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const stats = [
   { value: '4 Continents', label: 'Global NRI Network', desc: 'USA, Canada, UK & Australia Desks', icon: Globe },
@@ -63,7 +63,7 @@ export function About() {
 
             <div className="pt-4">
               <Link
-                to="/about"
+                href="/about"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] text-white font-mono font-extrabold text-xs uppercase tracking-widest hover:bg-[#007CDC] transition-all duration-300 shadow-lg hover:shadow-[0_10px_25px_rgba(0,124,220,0.3)]"
               >
                 <span>READ COMPLETE INSTITUTIONAL PROFILE</span>

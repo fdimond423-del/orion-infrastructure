@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TrendingUp, Building2, ShieldCheck, MapPin, ArrowUpRight, Zap, Award, Globe } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const reasons = [
   {
@@ -106,7 +106,7 @@ export function WhyGujarat() {
             </h3>
           </div>
           <Link
-            to="/gujarat"
+            href="/gujarat"
             className="px-8 py-4 rounded-full bg-[#007CDC] hover:bg-[#0A1128] text-white font-mono font-bold text-xs uppercase tracking-widest shrink-0 transition-all duration-300 shadow-md"
           >
             DISCOVER GUJARAT APEX

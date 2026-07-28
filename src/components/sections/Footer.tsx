@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { Shield, MapPin, Phone, Mail, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export function Footer() {
@@ -16,7 +16,7 @@ export function Footer() {
           
           {/* Brand Presentation (2 Cols) */}
           <div className="lg:col-span-2 space-y-6">
-            <Link to="/" className="flex items-center gap-3.5 group">
+            <Link href="/" className="flex items-center gap-3.5 group">
               <div className="h-16 w-auto flex items-center justify-center transition-transform group-hover:scale-105">
                 <img 
                   src={`${import.meta.env.BASE_URL}logo.png`} 
@@ -46,11 +46,11 @@ export function Footer() {
               INSTITUTIONAL DIRECTORY
             </h4>
             <ul className="space-y-2.5 text-sm font-medium">
-              <li><Link to="/" className="text-slate-300 hover:text-white transition-colors">Home & Dashboard</Link></li>
-              <li><Link to="/strategy" className="text-slate-300 hover:text-white transition-colors">Investment Strategy</Link></li>
-              <li><Link to="/services" className="text-slate-300 hover:text-white transition-colors">NRI Services & Advisory</Link></li>
-              <li><Link to="/gujarat" className="text-slate-300 hover:text-white transition-colors">Gujarat Growth Nodes</Link></li>
-              <li><Link to="/opportunities" className="text-slate-300 hover:text-white transition-colors">Asset Opportunities</Link></li>
+              <li><Link href="/" className="text-slate-300 hover:text-white transition-colors">Home & Dashboard</Link></li>
+              <li><Link href="/strategy" className="text-slate-300 hover:text-white transition-colors">Investment Strategy</Link></li>
+              <li><Link href="/services" className="text-slate-300 hover:text-white transition-colors">NRI Services & Advisory</Link></li>
+              <li><Link href="/gujarat" className="text-slate-300 hover:text-white transition-colors">Gujarat Growth Nodes</Link></li>
+              <li><Link href="/opportunities" className="text-slate-300 hover:text-white transition-colors">Asset Opportunities</Link></li>
             </ul>
           </div>
 
@@ -59,9 +59,9 @@ export function Footer() {
               ADVISORY DESKS
             </h4>
             <ul className="space-y-2.5 text-sm font-medium">
-              <li><Link to="/about" className="text-slate-300 hover:text-white transition-colors">Executive Leadership</Link></li>
-              <li><Link to="/resources" className="text-slate-300 hover:text-white transition-colors">RERA Title Dossiers</Link></li>
-              <li><Link to="/contact" className="text-slate-300 hover:text-white transition-colors">Book Consultation</Link></li>
+              <li><Link href="/about" className="text-slate-300 hover:text-white transition-colors">Executive Leadership</Link></li>
+              <li><Link href="/resources" className="text-slate-300 hover:text-white transition-colors">RERA Title Dossiers</Link></li>
+              <li><Link href="/contact" className="text-slate-300 hover:text-white transition-colors">Book Consultation</Link></li>
               <li><a href="tel:+16096618318" className="text-emerald-400 hover:text-emerald-300 font-mono font-bold">USA: +1-609-661-8318</a></li>
               <li><a href="tel:+919512301869" className="text-blue-400 hover:text-blue-300 font-mono font-bold">India: +91-95123-01869</a></li>
             </ul>

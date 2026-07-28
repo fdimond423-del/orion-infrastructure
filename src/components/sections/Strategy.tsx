@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, TrendingUp, RefreshCw, CheckCircle2, ArrowUpRight, Lock, Award, Briefcase } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const pillars = [
   {
@@ -119,7 +119,7 @@ export function Strategy() {
         {/* Bottom Banner */}
         <div className="mt-16 text-center">
           <Link
-            to="/strategy"
+            href="/strategy"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] text-white font-mono font-extrabold text-xs uppercase tracking-widest hover:bg-[#007CDC] transition-all shadow-lg duration-300"
           >
             <span>REVIEW DETAILED RERA & LEGAL COMPLIANCE DOSSIER</span>

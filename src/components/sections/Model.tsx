@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, RefreshCw, Zap, TrendingUp, DollarSign, Building2, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const cycle = [
   {
@@ -86,7 +86,7 @@ export function Model() {
 
             <div className="pt-2">
               <Link
-                to="/strategy"
+                href="/strategy"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] text-white font-mono font-bold text-xs uppercase tracking-widest hover:bg-[#007CDC] transition-all shadow-md"
               >
                 <span>EXPLORE TECHNICAL STRATEGY FRAMEWORK</span>

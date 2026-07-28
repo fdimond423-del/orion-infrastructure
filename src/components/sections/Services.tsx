@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, FileCheck, RefreshCcw, Building, Briefcase, Key, ArrowUpRight, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 const serviceCards = [
   {
@@ -106,7 +106,7 @@ export function Services() {
         {/* Bottom Banner CTA */}
         <div className="mt-16 text-center">
           <Link
-            to="/services"
+            href="/services"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] text-white font-mono font-bold text-xs uppercase tracking-widest hover:bg-[#007CDC] transition-all duration-300 shadow-lg"
           >
             <span>VIEW COMPLETE NRI SERVICES PROTOCOL DIRECTORY</span>

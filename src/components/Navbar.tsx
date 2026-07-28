@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'wouter';
 import { Menu, X, ArrowUpRight, Phone, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -17,7 +17,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between gap-4">
           
           {/* Brand Logo - Enlarged and Centered Align */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className="h-14 w-auto sm:h-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
               <img 
                 src={`${import.meta.env.BASE_URL}logo.png`} 
@@ -56,11 +56,11 @@ export function Navbar() {
           {/* Desktop Navigation Links (Centered) */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/80 shadow-inner">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = location === link.path;
               return (
                 <Link
                   key={link.name}
-                  to={link.path}
+                  href={link.path}
                   className={`px-4 py-2 rounded-full text-xs font-mono font-bold tracking-wider transition-all duration-300 relative ${
                     isActive 
                       ? 'bg-white text-[#007CDC] shadow-sm font-black' 
@@ -87,7 +87,7 @@ export function Navbar() {
               <span>+1-609-661-8318</span>
             </a>
             <Link 
-              to="/contact" 
+              href="/contact" 
               className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#007CDC] to-blue-600 text-white font-mono font-bold text-xs uppercase tracking-wider hover:shadow-[0_4px_20px_rgba(0,124,220,0.35)] hover:scale-105 transition-all duration-300 flex items-center gap-1.5 shadow-sm"
             >
               <span>ONE TRADE 360</span>
@@ -123,11 +123,11 @@ export function Navbar() {
                 <span>NRI INVESTMENT NAVIGATION</span>
               </div>
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
+                const isActive = location === link.path;
                 return (
                   <Link
                     key={link.name}
-                    to={link.path}
+                    href={link.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-5 py-3 rounded-2xl font-mono text-xs font-extrabold tracking-wider transition-all flex items-center justify-between ${
                       isActive 
@@ -154,7 +154,7 @@ export function Navbar() {
                   <span>USA HQ: +1-609-661-8318 (EDISON, NJ)</span>
                 </a>
                 <Link 
-                  to="/contact" 
+                  href="/contact" 
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full py-3.5 px-6 rounded-2xl bg-[#0A1128] text-white text-center font-mono text-xs font-extrabold uppercase tracking-widest shadow-lg flex items-center justify-center gap-2"
                 >
