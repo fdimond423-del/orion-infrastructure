@@ -141,7 +141,7 @@ export default function AboutPage() {
                     <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
                       {item.icon}
                     </div>
-                    <span className="text-3xl font-serif font-bold text-slate-300 group-hover:text-[#007cdc] transition-colors">
+                    <span className="text-3xl font-serif font-bold text-slate-500 group-hover:text-[#007cdc] transition-colors">
                       {item.step}
                     </span>
                   </div>

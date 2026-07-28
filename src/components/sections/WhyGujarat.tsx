@@ -14,23 +14,23 @@ const industries = [
 
 export function WhyGujarat() {
   return (
-    <section className="py-24 bg-muted relative">
+    <section className="py-24 bg-white relative border-b border-slate-200">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-4"
+            className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase mb-4"
           >
-            Economic Engine
+            ECONOMIC ENGINE
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif text-white"
+            className="text-4xl md:text-5xl font-serif font-bold text-[#131238]"
           >
             Why Gujarat?
           </motion.h3>
@@ -44,10 +44,10 @@ export function WhyGujarat() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="glass-panel p-6 rounded-2xl flex flex-col items-center justify-center text-center group hover:bg-white/10 transition-colors"
+              className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-400 flex flex-col items-center justify-center text-center group transition-all shadow-sm hover:shadow-md"
             >
-              <ind.icon className="w-10 h-10 text-white/50 mb-4 group-hover:text-primary transition-colors" />
-              <h4 className="text-sm md:text-base font-medium text-white">{ind.name}</h4>
+              <ind.icon className="w-10 h-10 text-[#007cdc] mb-4 group-hover:scale-110 transition-transform" />
+              <h4 className="text-sm md:text-base font-bold text-[#131238]">{ind.name}</h4>
             </motion.div>
           ))}
         </div>

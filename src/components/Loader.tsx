@@ -22,28 +22,27 @@ export function Loader() {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background overflow-hidden select-none"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white overflow-hidden select-none"
     >
-      {/* Background radial glow matching Home page sapphire & emerald theme */}
-      <div className="absolute w-[550px] h-[550px] bg-primary/20 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute w-[400px] h-[400px] bg-secondary/25 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background corporate glow matching Realty Studio white & sapphire theme */}
+      <div className="absolute w-[550px] h-[550px] bg-blue-100/40 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute w-[400px] h-[400px] bg-slate-100 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center justify-center">
         
-        {/* Orbital ring container with HUGE Cropped, Zero-Background Logo Emblem */}
+        {/* Orbital ring container with Clean Logo Emblem */}
         <div className="relative flex items-center justify-center mb-8">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-dashed border-primary/50 opacity-80"
+            className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-dashed border-[#007cdc]/40 opacity-80"
           />
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="absolute w-56 h-56 sm:w-72 sm:h-72 rounded-full border-2 border-primary/40 opacity-60 border-t-transparent border-l-transparent"
+            className="absolute w-56 h-56 sm:w-72 sm:h-72 rounded-full border-2 border-[#131238]/20 opacity-60 border-t-[#007cdc] border-l-transparent"
           />
 
-          {/* Complete un-cut logo graphic with zero background via mix-blend-screen */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: [0.97, 1.03, 0.97], opacity: 1 }}
@@ -56,28 +55,28 @@ export function Loader() {
             <img 
               src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="Orion Complete Logo" 
-              className="w-full h-full object-contain mix-blend-screen filter drop-shadow-[0_0_35px_rgba(16,185,129,0.45)] transition-transform"
+              className="w-full h-full object-contain filter drop-shadow-md transition-transform"
             />
           </motion.div>
         </div>
 
-        {/* Crisp Progress Bar in Signature Home Page Emerald / Accent Theme */}
+        {/* Crisp Corporate Progress Bar */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex flex-col items-center space-y-3 w-56 sm:w-64"
         >
-          <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden p-[1px] shadow-inner">
+          <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden p-[1px] shadow-inner">
             <motion.div 
-              className="h-full bg-gradient-to-r from-primary via-emerald-400 to-accent rounded-full shadow-[0_0_15px_rgba(16,185,129,0.9)]"
+              className="h-full bg-gradient-to-r from-[#131238] via-[#007cdc] to-[#007cdc] rounded-full shadow-sm"
               style={{ width: `${progress}%` }}
               transition={{ ease: "easeOut" }}
             />
           </div>
-          <div className="flex justify-between w-full text-[11px] font-mono text-white/70 tracking-[0.25em] uppercase font-semibold">
-            <span>Platform Sync</span>
-            <span className="text-primary font-bold">{progress}%</span>
+          <div className="flex justify-between w-full text-[11px] font-mono text-[#131238] tracking-[0.25em] uppercase font-bold">
+            <span>PLATFORM SYNC</span>
+            <span className="text-[#007cdc] font-extrabold">{progress}%</span>
           </div>
         </motion.div>
 

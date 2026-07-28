@@ -10,18 +10,18 @@ const steps = [
 
 export function Strategy() {
   return (
-    <section className="py-24 bg-muted relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+    <section className="py-24 bg-white relative border-b border-slate-200">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-4">The Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-white">Investment Strategy</h3>
+          <h2 className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase mb-3">THE JOURNEY</h2>
+          <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#131238]">Investment Strategy</h3>
         </div>
 
         <div className="relative">
           {/* Connecting Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-white/10 -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/3 left-0 w-full h-px bg-blue-200 -translate-y-1/2 z-0" />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
             {steps.map((step, idx) => (
               <motion.div
                 key={step.num}
@@ -29,14 +29,14 @@ export function Strategy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className="relative group"
+                className="relative group p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white transition-all shadow-sm hover:shadow-lg flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-background border border-white/20 flex items-center justify-center text-xl font-serif text-white mx-auto mb-6 relative z-10 group-hover:border-primary group-hover:text-primary transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[#007cdc] text-white flex items-center justify-center text-xl font-mono font-bold mx-auto mb-6 shadow-md group-hover:scale-110 transition-transform">
                   {step.num}
                 </div>
-                <div className="text-center">
-                  <h4 className="text-lg font-medium text-white mb-3">{step.title}</h4>
-                  <p className="text-sm text-white/50 leading-relaxed">{step.desc}</p>
+                <div>
+                  <h4 className="text-lg font-bold text-[#131238] mb-2">{step.title}</h4>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
