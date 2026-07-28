@@ -1,260 +1,261 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Send, CheckCircle2, Globe, MessageSquare, ShieldCheck, Sparkles, Building2, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, ShieldCheck, CheckCircle2, Clock, Building2 } from 'lucide-react';
 
 export function Contact() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    userLocation: 'USA',
-    assetInterest: 'GIFT City Commercial',
-    investmentBudget: '$250K - $500K',
+    residence: 'United States (USA)',
+    corridor: 'GIFT City & Ahmedabad Commercial',
+    investmentAmount: '$100,000 - $300,000 USD Eq.',
     message: ''
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 6000);
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        residence: 'United States (USA)',
+        corridor: 'GIFT City & Ahmedabad Commercial',
+        investmentAmount: '$100,000 - $300,000 USD Eq.',
+        message: ''
+      });
+    }, 4000);
   };
 
   return (
-    <section id="contact" className="py-28 bg-white relative overflow-hidden text-slate-700 selection:bg-blue-500/20 selection:text-blue-900 border-t border-slate-200">
-      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-6xl">
+    <section id="contact" className="py-28 bg-white relative overflow-hidden border-b border-slate-200">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <span className="text-xs font-mono font-bold tracking-[0.3em] text-[#007cdc] uppercase bg-blue-50 px-5 py-2 rounded-full border border-blue-200 inline-block mb-4 shadow-xs">
-              GLOBAL BUSINESS SERVICE | ONE TRADE 360
-            </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#131238] mb-6">
-              Connect With Our <span className="text-gradient-emerald">Investment Advisory</span>
-            </h2>
-            <p className="text-lg text-slate-600 font-normal leading-relaxed">
-              Whether you own U.S. gas stations, convenience stores, or operate global enterprise cash flows, our dedicated desks in Edison (NJ) and Gujarat are ready to architect your portfolio.
-            </p>
-          </motion.div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#007CDC] text-xs font-mono font-bold tracking-[0.25em] uppercase shadow-xs">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>CONFIDENTIAL CLIENT ADVISORY DESK</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-[#0A1128] tracking-tight">
+            Schedule Your Private <span className="text-[#007CDC]">Consultation</span>
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg font-normal leading-relaxed">
+            Connect directly with our Executive Directors at our Edison (New Jersey) HQ or Gujarat Institutional Desks. All discussions are protected by strict client fiduciary confidentiality.
+          </p>
         </div>
 
+        {/* 2-Column Booking & Contact Matrix */}
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Global Contact Desks & WhatsApp */}
-          <div className="lg:col-span-5 space-y-8">
+          {/* Left Column: Contact Desks & Guarantee Banner */}
+          <div className="lg:col-span-5 space-y-6">
             
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-lg relative overflow-hidden group hover:border-blue-400 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#007cdc] font-bold shadow-xs">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-bold text-[#131238] group-hover:text-[#007cdc] transition-colors">One Trade 360 Desks</h3>
-                  <span className="text-[11px] text-[#007cdc] font-mono font-bold uppercase tracking-widest block">SYNCHRONOUS USA & INDIA SUPPORT</span>
-                </div>
+            {/* Direct USA HQ Line */}
+            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-blue-400 transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#007CDC] flex items-center justify-center border border-blue-100 shadow-xs">
+                <MapPin className="w-6 h-6" />
               </div>
-
-              <div className="space-y-6 text-sm">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-[#007cdc] shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-[#131238] text-base">USA Headquarters Desk</h4>
-                    <p className="text-slate-600 font-medium mt-1">1885 Lincoln Highway, Edison, NJ 08817</p>
-                    <p className="text-xs text-slate-500 mt-1">Serving U.S. Business Owners across Pennsylvania, New Jersey, New York, Texas, & California.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 pt-3 border-t border-slate-200">
-                  <Phone className="w-5 h-5 text-[#007cdc] shrink-0" />
-                  <div>
-                    <span className="text-xs text-slate-500 block font-mono font-semibold uppercase">Direct USA Consultation Line</span>
-                    <a href="tel:+16096618318" className="text-lg font-mono font-bold text-[#131238] hover:text-[#007cdc] transition-colors">
-                      +1-609-661-8318
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 pt-3 border-t border-slate-200">
-                  <Building2 className="w-5 h-5 text-[#007cdc] shrink-0" />
-                  <div>
-                    <span className="text-xs text-slate-500 block font-mono font-semibold uppercase">Gujarat Corporate Executive Desk</span>
-                    <a href="tel:+919512301869" className="text-lg font-mono font-bold text-[#131238] hover:text-[#007cdc] transition-colors">
-                      +91-95123-01869
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 pt-3 border-t border-slate-200">
-                  <Mail className="w-5 h-5 text-[#007cdc] shrink-0" />
-                  <div>
-                    <span className="text-xs text-slate-500 block font-mono font-semibold uppercase">Official Communications</span>
-                    <a href="mailto:info@onetrade360.com" className="text-base font-mono font-bold text-[#007cdc] hover:underline">
-                      info@onetrade360.com
-                    </a>
-                  </div>
-                </div>
+              <div>
+                <span className="text-xs font-mono font-bold text-[#007CDC] uppercase tracking-widest">USA HEADQUARTERS LINE</span>
+                <h3 className="text-2xl font-serif font-bold text-[#0A1128] mt-1">Edison, New Jersey</h3>
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                  1885 Lincoln Highway, Edison, NJ 08817<br />
+                  <strong className="text-slate-800">Specialty:</strong> U.S. Gas Station & Franchise Surplus Syndication
+                </p>
               </div>
-
-              {/* Instant WhatsApp Chat Action Button */}
-              <div className="mt-8 pt-6 border-t border-slate-200">
-                <a
-                  href="https://wa.me/16096618318?text=Hello%20Orion%20Infrastructure%20%26%20One%20Trade%20360,%20I%20would%20like%20to%20consult%20regarding%20reinvesting%20my%20business%20profits%20in%20Gujarat%20real%20estate."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-2xl flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg text-sm tracking-wide uppercase"
-                >
-                  <MessageSquare className="w-5 h-5 fill-white" /> Connect Direct via WhatsApp
+              <div className="pt-3 border-t border-slate-200">
+                <a href="tel:+16096618318" className="text-base font-mono font-black text-[#007CDC] hover:text-[#0A1128] flex items-center gap-2 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <span>+1 (609) 661-8318</span>
                 </a>
               </div>
             </div>
 
-            {/* Trust Badges Box */}
-            <div className="p-6 rounded-3xl bg-blue-50/80 border border-blue-200 flex items-center gap-4 shadow-md">
-              <ShieldCheck className="w-10 h-10 text-[#007cdc] shrink-0" />
+            {/* Direct India Execution Desk */}
+            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:border-blue-400 transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100 shadow-xs">
+                <Building2 className="w-6 h-6" />
+              </div>
               <div>
-                <h4 className="text-sm font-bold text-[#131238] font-serif">100% RERA & Legal Title Protection</h4>
-                <p className="text-xs text-slate-600 font-medium mt-0.5">Every real estate opportunity undergoes rigorous institutional scrutiny before presentation to our clients.</p>
+                <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest">INDIA INSTITUTIONAL DESK</span>
+                <h3 className="text-2xl font-serif font-bold text-[#0A1128] mt-1">Gujarat Corporate Office</h3>
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Ahmedabad Commercial Apex & GIFT City Node<br />
+                  <strong className="text-slate-800">Specialty:</strong> RERA 30-Year Title Vetting & Deed Recording
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-200">
+                <a href="tel:+919512301869" className="text-base font-mono font-black text-emerald-600 hover:text-[#0A1128] flex items-center gap-2 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <span>+91 95123 01869</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Fiduciary Commitment Box */}
+            <div className="p-6 rounded-3xl bg-[#0A1128] text-white border border-slate-800 shadow-xl flex items-start gap-4">
+              <Clock className="w-8 h-8 text-[#007CDC] shrink-0 mt-1" />
+              <div className="space-y-1">
+                <h4 className="font-serif font-bold text-base text-white">24-Hour Executive Callback Guarantee</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Every submitted request is directed straight to our Senior Investment Directors. You will receive a direct phone or Zoom appointment confirmation within 24 business hours.
+                </p>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: High-End Strategic Consultation Form */}
-          <div className="lg:col-span-7">
-            <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative">
-              
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
-                <div>
-                  <h3 className="text-2xl font-serif font-bold text-[#131238]">Schedule Strategic Advisory</h3>
-                  <p className="text-slate-500 text-sm font-normal mt-1">Receive tailored RERA property dossiers and NRE/NRO fund routing plans.</p>
-                </div>
-                <Sparkles className="w-7 h-7 text-[#007cdc] shrink-0" />
+          {/* Right Column: Confidential Booking Form */}
+          <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-3xl border-2 border-slate-200 shadow-xl relative overflow-hidden">
+            
+            <div className="border-b border-slate-200 pb-6 mb-8 flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-serif font-bold text-[#0A1128]">Confidential Advisory Request</h3>
+                <p className="text-xs text-slate-500 mt-1 font-mono">Fill in your portfolio parameters for a tailored RERA dossier.</p>
               </div>
+              <span className="px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10px] font-mono font-bold uppercase">
+                SECURED PORTAL
+              </span>
+            </div>
 
-              {formSubmitted ? (
-                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="py-16 text-center space-y-4">
-                  <CheckCircle2 className="w-16 h-16 text-[#007cdc] mx-auto" />
-                  <h4 className="text-3xl font-serif font-bold text-[#131238]">Inquiry Successfully Recorded!</h4>
-                  <p className="text-slate-600 max-w-md mx-auto text-sm">
-                    Thank you, <span className="text-[#007cdc] font-bold">{formData.name || 'Investor'}</span>. Our Executive Director at One Trade 360 will contact you via phone/email within 24 business hours.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Full Name *</label>
-                      <input 
-                        type="text" 
-                        required 
-                        placeholder="e.g. Rajesh Patel"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#007cdc] focus:bg-white text-[#131238] placeholder:text-slate-400 outline-none transition-all text-sm font-medium shadow-xs"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Email Address *</label>
-                      <input 
-                        type="email" 
-                        required 
-                        placeholder="e.g. rajesh@patelfranchise.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#007cdc] focus:bg-white text-[#131238] placeholder:text-slate-400 outline-none transition-all text-sm font-medium shadow-xs"
-                      />
-                    </div>
+            {submitted ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="py-16 text-center space-y-4"
+              >
+                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-[#0A1128]">Advisory Request Registered</h3>
+                <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                  Thank you. Your confidential portfolio parameter profile has been received by our USA & Gujarat Executive Desks. An advisor will contact you within 24 hours.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Full Legal Name *</label>
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="e.g. Rajesh Patel" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-medium outline-none transition-all shadow-xs"
+                    />
                   </div>
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Phone / WhatsApp Number *</label>
-                      <input 
-                        type="tel" 
-                        required 
-                        placeholder="e.g. +1 (609) 000-0000"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#007cdc] focus:bg-white text-[#131238] placeholder:text-slate-400 outline-none transition-all text-sm font-medium font-mono shadow-xs"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Current Residence Location</label>
-                      <select 
-                        value={formData.userLocation}
-                        onChange={(e) => setFormData({...formData, userLocation: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 focus:border-[#007cdc] text-[#131238] font-medium outline-none transition-all text-sm cursor-pointer shadow-xs"
-                      >
-                        <option value="USA" className="bg-white text-[#131238] py-1">USA (PA, NJ, NY, TX, CA, etc.)</option>
-                        <option value="UK" className="bg-white text-[#131238] py-1">United Kingdom & Europe</option>
-                        <option value="Canada" className="bg-white text-[#131238] py-1">Canada</option>
-                        <option value="Australia" className="bg-white text-[#131238] py-1">Australia & NZ</option>
-                        <option value="India" className="bg-white text-[#131238] py-1">India (Local / NRI Returning)</option>
-                        <option value="Other" className="bg-white text-[#131238] py-1">Other Global Jurisdiction</option>
-                      </select>
-                    </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Email Address *</label>
+                    <input 
+                      type="email" 
+                      required
+                      placeholder="e.g. rpatel@enterprisetrade.com" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-medium outline-none transition-all shadow-xs"
+                    />
                   </div>
+                </div>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Target Asset Class</label>
-                      <select 
-                        value={formData.assetInterest}
-                        onChange={(e) => setFormData({...formData, assetInterest: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 focus:border-[#007cdc] text-[#131238] font-medium outline-none transition-all text-sm cursor-pointer shadow-xs"
-                      >
-                        <option value="GIFT City Commercial" className="bg-white text-[#131238] py-1">GIFT City IFSC Commercial & Towers</option>
-                        <option value="Luxury Residential Villas" className="bg-white text-[#131238] py-1">Luxury Residential Villas (Ahmedabad/Gandhinagar)</option>
-                        <option value="Recurring Rental Income" className="bg-white text-[#131238] py-1">Recurring Cash Flow Rental Assets</option>
-                        <option value="Dholera / Sanand Industrial" className="bg-white text-[#131238] py-1">Dholera SIR & Sanand Industrial Land</option>
-                        <option value="Custom Wealth Strategy" className="bg-white text-[#131238] py-1">Comprehensive Portfolio Diversification</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Planned Investment Budget</label>
-                      <select 
-                        value={formData.investmentBudget}
-                        onChange={(e) => setFormData({...formData, investmentBudget: e.target.value})}
-                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-400 focus:border-[#007cdc] text-[#131238] font-medium font-mono outline-none transition-all text-sm cursor-pointer shadow-xs"
-                      >
-                        <option value="$100K - $250K" className="bg-white text-[#131238] py-1">$100,000 - $250,000 USD</option>
-                        <option value="$250K - $500K" className="bg-white text-[#131238] py-1">$250,000 - $500,000 USD</option>
-                        <option value="$500K - $1M" className="bg-white text-[#131238] py-1">$500,000 - $1,000,000 USD</option>
-                        <option value="$1M+" className="bg-white text-[#131238] py-1">$1,000,000+ USD (Institutional Scale)</option>
-                        <option value="Advisory Only" className="bg-white text-[#131238] py-1">Initial Advisory & Strategy Evaluation</option>
-                      </select>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Contact Phone Number *</label>
+                    <input 
+                      type="tel" 
+                      required
+                      placeholder="e.g. +1 (732) 555-0199" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-medium font-mono outline-none transition-all shadow-xs"
+                    />
                   </div>
-
-                  <div>
-                    <label className="block text-xs font-mono font-bold tracking-widest text-[#007cdc] uppercase mb-2">Strategic Notes / U.S. Business Background</label>
-                    <textarea 
-                      rows={4}
-                      placeholder="Share details about your cash flow goals, preferred timeline, or questions about FEMA / RERA guidelines..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#007cdc] focus:bg-white text-[#131238] placeholder:text-slate-400 outline-none transition-all text-sm font-medium resize-none shadow-xs"
-                    ></textarea>
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Current Residence Location *</label>
+                    <select 
+                      value={formData.residence}
+                      onChange={(e) => setFormData({ ...formData, residence: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-semibold outline-none transition-all shadow-xs"
+                    >
+                      <option value="United States (USA)">United States (USA)</option>
+                      <option value="Canada">Canada</option>
+                      <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Other Global NRI">Other Global NRI Region</option>
+                    </select>
                   </div>
+                </div>
 
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Primary Corridor of Interest</label>
+                    <select 
+                      value={formData.corridor}
+                      onChange={(e) => setFormData({ ...formData, corridor: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-semibold outline-none transition-all shadow-xs"
+                    >
+                      <option value="GIFT City Fintech & Commercial Node">GIFT City Fintech & Commercial Node</option>
+                      <option value="Ahmedabad Commercial & Retail Apex">Ahmedabad Commercial & Retail Apex</option>
+                      <option value="Dholera SIR Smart City Plots">Dholera SIR Smart City Industrial Plots</option>
+                      <option value="Sanand Industrial & Automotive Warehousing">Sanand Automotive Warehousing</option>
+                      <option value="Bespoke Portfolio Syndication">Bespoke Portfolio Syndication</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Target Investment Allocation</label>
+                    <select 
+                      value={formData.investmentAmount}
+                      onChange={(e) => setFormData({ ...formData, investmentAmount: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-semibold outline-none transition-all shadow-xs font-mono"
+                    >
+                      <option value="$85,000 - $150,000 USD Eq.">$85,000 - $150,000 USD Eq.</option>
+                      <option value="$150,000 - $350,000 USD Eq.">$150,000 - $350,000 USD Eq.</option>
+                      <option value="$350,000 - $1,000,000+ USD Eq.">$350,000 - $1,000,000+ USD Eq.</option>
+                      <option value="$1M+ Institutional Syndication">$1M+ Institutional Syndication</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider block">Business Portfolio or Consultation Notes</label>
+                  <textarea 
+                    rows={4}
+                    placeholder="Briefly mention your active commercial business in the USA or preferred appointment timing..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:border-[#007CDC] focus:bg-white text-[#0A1128] text-sm font-medium outline-none transition-all shadow-xs resize-none"
+                  />
+                </div>
+
+                <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#007cdc] hover:bg-[#131238] text-white font-bold rounded-xl transition-all duration-300 shadow-md hover:shadow-xl text-sm uppercase tracking-wider flex items-center justify-center gap-2"
+                    className="w-full py-4 px-8 rounded-2xl bg-[#0A1128] hover:bg-[#007CDC] text-white font-mono font-extrabold text-sm uppercase tracking-widest flex items-center justify-center gap-3 shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                   >
-                    <Send className="w-4 h-4" /> Submit Confidential Advisory Request
+                    <Send className="w-4 h-4 text-emerald-400" />
+                    <span>SUBMIT CONFIDENTIAL ADVISORY INQUIRY</span>
                   </button>
+                </div>
 
-                  <p className="text-[11px] text-center text-slate-500 font-medium">
-                    Your details are fully safeguarded by attorney-level client privacy protocols and will never be shared with unverified parties.
-                  </p>
-                </form>
-              )}
+                <p className="text-[11px] font-mono text-slate-400 text-center uppercase">
+                  Protected by Attorney-Client Privacy protocols • Zero Spam Guarantee
+                </p>
 
-            </div>
+              </form>
+            )}
+
           </div>
 
         </div>
+
       </div>
     </section>
   );

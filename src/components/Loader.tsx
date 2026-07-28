@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Shield, Globe, TrendingUp } from 'lucide-react';
 
 export function Loader() {
   const [progress, setProgress] = useState(0);
+  const [status, setStatus] = useState('Securing Connection to USA East Coast Desk...');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -11,9 +13,15 @@ export function Loader() {
           clearInterval(timer);
           return 100;
         }
-        return prev + 4;
+        const next = prev + 2;
+        if (next >= 30 && next < 70) {
+          setStatus('Auditing Sovereign Gujarat Real Estate & GIFT City Nodes...');
+        } else if (next >= 70) {
+          setStatus('Initializing One Trade 360 Cross-Border Portfolio...');
+        }
+        return next;
       });
-    }, 20);
+    }, 25);
 
     return () => clearInterval(timer);
   }, []);
@@ -21,65 +29,114 @@ export function Loader() {
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white overflow-hidden select-none"
+      exit={{ opacity: 0, scale: 1.02, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-[#0A1128] to-slate-950 text-white overflow-hidden select-none"
     >
-      {/* Background corporate glow matching Realty Studio white & sapphire theme */}
-      <div className="absolute w-[550px] h-[550px] bg-blue-100/40 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute w-[400px] h-[400px] bg-slate-100 rounded-full blur-[140px] pointer-events-none" />
+      {/* Cinematic Deep Ambient Glows */}
+      <div className="absolute w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] translate-y-20 pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center">
+      {/* Subtle Institutional Grid Texture */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+      <div className="relative z-10 flex flex-col items-center justify-center max-w-lg px-6 text-center">
         
-        {/* Orbital ring container with Clean Logo Emblem */}
-        <div className="relative flex items-center justify-center mb-8">
+        {/* Orbital Brand Centerpiece */}
+        <div className="relative flex items-center justify-center mb-10 w-64 h-64 sm:w-72 sm:h-72">
+          {/* Outer Rotating Diamond Radar Ring */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-dashed border-[#007cdc]/40 opacity-80"
-          />
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 rounded-full border border-slate-700/60 p-2 shadow-[0_0_40px_rgba(0,124,220,0.15)]"
+          >
+            <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#007CDC] shadow-[0_0_10px_#007CDC]" />
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#10B981]" />
+          </motion.div>
+
+          {/* Inner Counter-Rotating Gauge */}
           <motion.div
             animate={{ rotate: -360 }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="absolute w-56 h-56 sm:w-72 sm:h-72 rounded-full border-2 border-[#131238]/20 opacity-60 border-t-[#007cdc] border-l-transparent"
+            transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-6 rounded-full border border-dashed border-blue-500/40 opacity-70"
           />
 
+          {/* Center Glass Sphere with Transparent Logo */}
           <motion.div
-            initial={{ scale: 0.85, opacity: 0 }}
-            animate={{ scale: [0.97, 1.03, 0.97], opacity: 1 }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: [0.98, 1.02, 0.98], opacity: 1 }}
             transition={{ 
-              scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-              opacity: { duration: 0.5 } 
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              opacity: { duration: 0.6 } 
             }}
-            className="relative w-56 h-64 sm:w-64 sm:h-72 flex items-center justify-center pointer-events-none"
+            className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md border border-white/15 flex items-center justify-center p-6 shadow-2xl overflow-hidden"
           >
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-400/5 to-white/10 pointer-events-none" />
             <img 
               src={`${import.meta.env.BASE_URL}logo.png`} 
-              alt="Orion Complete Logo" 
-              className="w-full h-full object-contain filter drop-shadow-md transition-transform"
+              alt="Orion Complete Emblem" 
+              className="w-full h-full object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
             />
           </motion.div>
         </div>
 
-        {/* Crisp Corporate Progress Bar */}
+        {/* Brand Typography */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="flex flex-col items-center space-y-3 w-56 sm:w-64"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-2 mb-8"
         >
-          <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden p-[1px] shadow-inner">
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-[11px] font-mono font-bold tracking-[0.25em] uppercase">
+            <Globe className="w-3.5 h-3.5 text-blue-400 animate-spin" style={{ animationDuration: '12s' }} />
+            <span>EXECUTIVE ADVISORY PLATFORM</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-white">
+            Orion Infrastructure
+          </h1>
+          <p className="text-xs text-slate-400 font-light tracking-wide max-w-sm mx-auto">
+            Channeling U.S. Business Profits into Multi-Generational Gujarat Real Estate
+          </p>
+        </motion.div>
+
+        {/* High-Precision Synchronized Progress Console */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="w-full max-w-sm bg-slate-900/80 backdrop-blur-md p-5 rounded-2xl border border-slate-800 shadow-xl"
+        >
+          <div className="flex justify-between items-center text-xs mb-3 font-mono">
+            <span className="text-slate-300 flex items-center gap-2 truncate pr-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              {status}
+            </span>
+            <span className="text-[#007CDC] font-bold text-sm shrink-0">{progress}%</span>
+          </div>
+          
+          <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden p-[2px] shadow-inner">
             <motion.div 
-              className="h-full bg-gradient-to-r from-[#131238] via-[#007cdc] to-[#007cdc] rounded-full shadow-sm"
+              className="h-full bg-gradient-to-r from-[#007CDC] via-blue-500 to-emerald-400 rounded-full shadow-[0_0_12px_rgba(0,124,220,0.8)]"
               style={{ width: `${progress}%` }}
               transition={{ ease: "easeOut" }}
             />
           </div>
-          <div className="flex justify-between w-full text-[11px] font-mono text-[#131238] tracking-[0.25em] uppercase font-bold">
-            <span>PLATFORM SYNC</span>
-            <span className="text-[#007cdc] font-extrabold">{progress}%</span>
+
+          <div className="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-800/80 text-[10px] text-slate-400 font-mono text-left">
+            <div className="flex items-center gap-1.5 truncate">
+              <Shield className="w-3 h-3 text-emerald-400 shrink-0" />
+              <span>RERA AUDIT</span>
+            </div>
+            <div className="flex items-center gap-1.5 truncate justify-center">
+              <TrendingUp className="w-3 h-3 text-blue-400 shrink-0" />
+              <span>GIFT CITY</span>
+            </div>
+            <div className="flex items-center gap-1.5 truncate justify-end">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+              <span>NJ • GUJARAT</span>
+            </div>
           </div>
         </motion.div>
-
+        
       </div>
     </motion.div>
   );
