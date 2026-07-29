@@ -240,7 +240,7 @@ export default function GujaratGrowthPage() {
         {[1, 2, 3, 4, 5, 6].map((num) => (
           <div key={num} className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group">
             <img 
-              src={`/gift-city/gift-${num}.jpeg`} 
+              src={`${import.meta.env.BASE_URL}gift-city/gift-${num}.jpeg`} 
               alt={`GIFT City View ${num}`} 
               className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
             />
@@ -249,7 +249,7 @@ export default function GujaratGrowthPage() {
         {/* 7th image spans full width */}
         <div className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group md:col-span-2 lg:col-span-3">
           <img 
-            src={`/gift-city/gift-7.jpeg`} 
+            src={`${import.meta.env.BASE_URL}gift-city/gift-7.jpeg`} 
             alt={`GIFT City Panorama`} 
             className="w-full aspect-video md:aspect-[21/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
           />
