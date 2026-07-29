@@ -61,7 +61,7 @@ export default function NriServicesPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-white border-b border-slate-200">
+      <section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-6">
             <Sparkles className="w-4 h-4 text-amber-500" />

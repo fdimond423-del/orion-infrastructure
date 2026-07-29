@@ -110,7 +110,7 @@ export default function OpportunitiesPage() {
       <Navbar />
 
       {/* Monumental Header */}
-      <section className="relative pt-36 pb-20 bg-white overflow-hidden border-b border-slate-200">
+      <section className="relative pt-48 lg:pt-56 pb-20 bg-white overflow-hidden border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <div className="max-w-4xl space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide">

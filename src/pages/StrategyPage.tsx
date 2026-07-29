@@ -18,7 +18,7 @@ export default function StrategyPage() {
       <Navbar />
       
       {/* Hero Banner */}
-      <section className="relative pt-36 pb-20 overflow-hidden bg-white border-b border-slate-200">
+      <section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-50 rounded-full blur-[140px] pointer-events-none" />
         

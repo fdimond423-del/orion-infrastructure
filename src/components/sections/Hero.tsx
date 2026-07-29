@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen pt-36 pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
+    <section className="relative min-h-screen pt-48 lg:pt-56 pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
       
       {/* Very subtle ambient glows for a premium white feel */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* About Page Header */}
-      <section className="relative pt-36 pb-24 bg-white border-b border-slate-200 overflow-hidden">
+      <section className="relative pt-48 lg:pt-56 pb-24 bg-white border-b border-slate-200 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">

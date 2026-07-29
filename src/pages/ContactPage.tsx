@@ -7,7 +7,7 @@ export default function ContactPage() {
     <div className="bg-slate-50 text-slate-900 min-h-screen selection:bg-blue-600/20 font-sans">
       <Navbar />
 
-      <section className="relative pt-36 pb-20 bg-white border-b border-slate-200">
+      <section className="relative pt-48 lg:pt-56 pb-20 bg-white border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold uppercase tracking-wide mb-6">
             <Sparkles className="w-4 h-4 text-amber-500" />
