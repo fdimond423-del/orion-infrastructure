@@ -13,6 +13,16 @@ const imgAhmedabad = "https://images.unsplash.com/photo-1519567241046-7f570eee3c
 const imgGandhinagar = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop";
 const imgKandla = "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1200&auto=format&fit=crop";
 
+import gift1 from '@/assets/gift-city/gift-1.jpeg';
+import gift2 from '@/assets/gift-city/gift-2.jpeg';
+import gift3 from '@/assets/gift-city/gift-3.jpeg';
+import gift4 from '@/assets/gift-city/gift-4.jpeg';
+import gift5 from '@/assets/gift-city/gift-5.jpeg';
+import gift6 from '@/assets/gift-city/gift-6.jpeg';
+import gift7 from '@/assets/gift-city/gift-7.jpeg';
+
+const giftImages = [gift1, gift2, gift3, gift4, gift5, gift6];
+
 const growthCorridors = [
   {
     id: "gift",
@@ -237,11 +247,11 @@ export default function GujaratGrowthPage() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[1, 2, 3, 4, 5, 6].map((num) => (
-          <div key={num} className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group">
+        {giftImages.map((imgSrc, idx) => (
+          <div key={idx} className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group">
             <img 
-              src={`${import.meta.env.BASE_URL}gift-city/gift-${num}.jpeg`} 
-              alt={`GIFT City View ${num}`} 
+              src={imgSrc} 
+              alt={`GIFT City View ${idx + 1}`} 
               className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
             />
           </div>
@@ -249,7 +259,7 @@ export default function GujaratGrowthPage() {
         {/* 7th image spans full width */}
         <div className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group md:col-span-2 lg:col-span-3">
           <img 
-            src={`${import.meta.env.BASE_URL}gift-city/gift-7.jpeg`} 
+            src={gift7} 
             alt={`GIFT City Panorama`} 
             className="w-full aspect-video md:aspect-[21/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
           />
