@@ -52,14 +52,8 @@ export function Navbar() {
         <div className="container mx-auto px-6 md:px-12 max-w-7xl flex items-center justify-between">
           
           {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-3 z-50 relative group">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
-              <Globe className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-slate-900 leading-none tracking-tight">ORION</span>
-              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mt-0.5">BIZ INFRASTRUCTURE</span>
-            </div>
+          <Link href="/" className="z-50 relative group flex items-center">
+            <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-12 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}

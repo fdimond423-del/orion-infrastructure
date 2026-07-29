@@ -10,14 +10,8 @@ export function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600">
-                <Globe className="w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg text-slate-900 leading-none tracking-tight">ORION</span>
-                <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mt-0.5">BIZ INFRASTRUCTURE™</span>
-              </div>
+            <div className="flex items-center mb-2">
+              <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-16 w-auto object-contain drop-shadow-sm" />
             </div>
             <p className="text-sm leading-relaxed font-medium">
               Connecting North American operational cash flow to premier Indian institutional assets through One Trade 360 and Global Business Service.
@@ -47,11 +41,13 @@ export function Footer() {
             <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Navigation</h4>
             <ul className="space-y-3 text-sm font-medium">
               {[
-                { name: "About Us", path: "/about" },
-                { name: "Growth Corridors", path: "/gujarat-growth" },
-                { name: "Investment Assets", path: "/opportunities" },
+                { name: "Home", path: "/" },
+                { name: "About Orion", path: "/about" },
+                { name: "Investment Opportunities", path: "/opportunities" },
+                { name: "Gujarat Growth", path: "/gujarat-growth" },
                 { name: "NRI Services", path: "/nri-services" },
-                { name: "Contact Desk", path: "/contact" }
+                { name: "Resources", path: "/resources" },
+                { name: "Contact", path: "/contact" }
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link href={link.path} className="hover:text-blue-600 transition-colors flex items-center gap-2">
