@@ -2,6 +2,7 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
 import { Opportunities } from '@/components/sections/Opportunities';
+import { GiftCityHighlights } from '@/components/sections/GiftCityHighlights';
 import { Corridors } from '@/components/sections/Corridors';
 import { Strategy } from '@/components/sections/Strategy';
 import { Model } from '@/components/sections/Model';
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <Opportunities />
+        <GiftCityHighlights />
         <Corridors />
         <Strategy />
         <Model />
