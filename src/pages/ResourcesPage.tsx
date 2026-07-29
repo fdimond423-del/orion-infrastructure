@@ -3,6 +3,7 @@ import { Footer } from '@/components/sections/Footer';
 import { motion } from 'framer-motion';
 import { BookOpen, FileText, Globe, HelpCircle, Building, Users, MapPin, Mail, FileCheck, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const resourcesList = [
   { title: "Investment Guides", icon: BookOpen, desc: "Step-by-step guides on cross-border asset acquisition." },
@@ -20,7 +21,8 @@ export default function ResourcesPage() {
     <div className="bg-slate-50 text-slate-900 min-h-screen selection:bg-blue-600/20 font-sans">
       <Navbar />
 
-      <section className="relative pt-48 lg:pt-56 pb-20 bg-white border-b border-slate-200">
+      <ScrollReveal>
+<section className="relative pt-48 lg:pt-56 pb-20 bg-white border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold uppercase tracking-wide mb-6">
             <Sparkles className="w-4 h-4 text-amber-500" />
@@ -34,8 +36,10 @@ export default function ResourcesPage() {
           </p>
         </div>
       </section>
+</ScrollReveal>
 
-      <section className="py-24 bg-slate-50">
+      <ScrollReveal>
+<section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {resourcesList.map((res, idx) => (
@@ -76,6 +80,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       <Footer />
     </div>

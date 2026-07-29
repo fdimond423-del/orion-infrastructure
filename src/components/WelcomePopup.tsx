@@ -1,0 +1,82 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Target, Sparkles } from 'lucide-react';
+
+export function WelcomePopup() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Show only once per session
+    const hasSeenPopup = sessionStorage.getItem('orion_welcome_seen');
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        sessionStorage.setItem('orion_welcome_seen', 'true');
+      }, 1000); 
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 font-sans">
+          {/* Backdrop */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+          />
+
+          {/* Modal */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", duration: 0.6, bounce: 0.3 }}
+            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col"
+          >
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-br from-blue-600 to-emerald-500 opacity-10 pointer-events-none" />
+            
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur hover:bg-slate-100 rounded-full text-slate-500 transition-colors z-10 shadow-sm"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="p-8 md:p-10 relative z-10 flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 shadow-sm border border-blue-100">
+                <Target className="w-8 h-8" />
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+                Build Your Future in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Gujarat</span>
+              </h2>
+
+              <p className="text-slate-600 leading-relaxed mb-10 text-sm md:text-base max-w-xl">
+                Orion Biz Infrastructure helps NRIs and global investors explore residential, commercial, and business investment opportunities across Gujarat. Whether you're looking for rental apartments, luxury villas, independent homes, land, commercial properties, office spaces, or income-generating investments, our team provides guidance to help you make informed decisions aligned with your long-term goals.
+              </p>
+
+              <div className="w-full bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <p className="text-sm font-semibold text-slate-800 flex items-center justify-center gap-2 uppercase tracking-wide">
+                  <Sparkles className="w-4 h-4 text-emerald-500" />
+                  Earn Globally. Invest in Gujarat. Build Generational Wealth.
+                </p>
+              </div>
+
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="mt-8 px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors hover:shadow-lg w-full sm:w-auto"
+              >
+                Explore Opportunities
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}

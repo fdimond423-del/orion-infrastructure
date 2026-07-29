@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Sparkles, Building2, Briefcase } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen pt-48 lg:pt-56 pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
+    <ScrollReveal>
+<section className="relative min-h-screen pt-48 lg:pt-56 pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
       
       {/* Very subtle ambient glows for a premium white feel */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -145,5 +147,6 @@ export function Hero() {
         </div>
       </div>
     </section>
+</ScrollReveal>
   );
 }

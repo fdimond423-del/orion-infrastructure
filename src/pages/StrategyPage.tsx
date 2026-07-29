@@ -3,6 +3,7 @@ import { Footer } from '@/components/sections/Footer';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, ShieldCheck, CheckCircle2, Building2, Briefcase, Zap, DollarSign, Globe, Award, Sparkles, PieChart } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const imgGasStation = "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?q=80&w=1200&auto=format&fit=crop";
 const imgRetailStore = "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1200&auto=format&fit=crop";
@@ -18,7 +19,8 @@ export default function StrategyPage() {
       <Navbar />
       
       {/* Hero Banner */}
-      <section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
+      <ScrollReveal>
+<section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-50 rounded-full blur-[140px] pointer-events-none" />
         
@@ -53,9 +55,11 @@ export default function StrategyPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* 5-Step Strategic Timeline */}
-      <section className="py-24 bg-slate-50 relative">
+      <ScrollReveal>
+<section className="py-24 bg-slate-50 relative">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="text-xs font-semibold tracking-wider text-emerald-600 uppercase block mb-2">
@@ -98,9 +102,11 @@ export default function StrategyPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* STEP 1 & STEP 2 DEEP DIVE */}
-      <section className="py-24 bg-white relative border-t border-slate-200">
+      <ScrollReveal>
+<section className="py-24 bg-white relative border-t border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold tracking-wider text-blue-600 uppercase block mb-3">
@@ -142,9 +148,11 @@ export default function StrategyPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* THE ORION INFRASTRUCTURE MODEL */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200 text-center relative">
+      <ScrollReveal>
+<section className="py-24 bg-slate-50 border-t border-slate-200 text-center relative">
         <div className="container mx-auto px-6 max-w-5xl">
           <span className="text-xs font-bold tracking-wider text-amber-600 uppercase block mb-3">
             🔄 THE ORION INFRASTRUCTURE MODEL
@@ -172,9 +180,11 @@ export default function StrategyPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* CTA section with exact Wilkes Barre HQ */}
-      <section className="py-16 bg-white text-center border-t border-slate-200">
+      <ScrollReveal>
+<section className="py-16 bg-white text-center border-t border-slate-200">
         <div className="container mx-auto px-6 max-w-4xl space-y-6">
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
             Ready to Structure Your Cross-Border Portfolio?
@@ -195,6 +205,7 @@ export default function StrategyPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       <Footer />
     </div>

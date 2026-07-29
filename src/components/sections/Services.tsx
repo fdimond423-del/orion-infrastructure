@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Search, Building2, ShieldCheck, Plane, Landmark, TrendingUp, Handshake } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const services = [
   {
@@ -46,7 +47,8 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-24 bg-slate-50 relative border-b border-slate-200">
+    <ScrollReveal>
+<section className="py-24 bg-slate-50 relative border-b border-slate-200">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         <div className="text-center mb-16">
@@ -98,5 +100,6 @@ export function Services() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }

@@ -17,24 +17,36 @@ export function Footer() {
             <p className="text-sm leading-relaxed font-medium">
               Connecting North American operational cash flow to premier Indian institutional assets through One Trade 360 and Global Business Service.
             </p>
-            <div className="space-y-3 pt-2 text-sm font-semibold text-slate-700">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-blue-500 mt-1 shrink-0" />
-                <p>680, Hazel St, Wilkes-Barre,<br />PA-18702 (USA)</p>
+            {/* Contact Details */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-slate-900 mb-6">Contact Desk</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                <MapPin className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                <p className="text-sm">680, Hazel St, Wilkes-Barre,<br />PA-18702 (USA)</p>
               </div>
-              <a href="tel:+12722679492" className="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>USA: +1 272-267-9492</span>
-              </a>
-              <a href="tel:+917984171515" className="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>India: +91 7984171515</span>
-              </a>
-              <a href="mailto:Globalservicejjp4@gmail.com" className="flex items-center gap-3 hover:text-blue-600 transition-colors">
-                <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span className="break-all">Globalservicejjp4@gmail.com</span>
-              </a>
+              <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">USA Desk</span>
+                  <a href="tel:+12722679492" className="text-sm hover:text-blue-600 transition-colors">+1 272-267-9492</a>
+                  
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-2">Mayur Gadhavi (Marketing Pro)</span>
+                  <a href="tel:+919033568816" className="text-sm hover:text-blue-600 transition-colors">+91 90335 68816</a>
+                  
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-2">India Desk</span>
+                  <a href="tel:+917984171515" className="text-sm hover:text-blue-600 transition-colors">+91 7984171515</a>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                <Mail className="w-5 h-5 text-amber-500 shrink-0" />
+                <div className="flex flex-col gap-1 w-full overflow-hidden">
+                  <a href="mailto:Rexpert.mayur@gmail.com" className="text-sm hover:text-blue-600 transition-colors truncate">Rexpert.mayur@gmail.com</a>
+                  <a href="mailto:Globalservicejjp4@gmail.com" className="text-sm hover:text-blue-600 transition-colors truncate">Globalservicejjp4@gmail.com</a>
+                </div>
+              </div>
             </div>
+          </div>
           </div>
 
           {/* Quick Links */}

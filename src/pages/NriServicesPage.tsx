@@ -3,6 +3,7 @@ import { Footer } from '@/components/sections/Footer';
 import { motion } from 'framer-motion';
 import { ArrowRight, Search, FileCheck, Building, Plane, Building2, Briefcase, Handshake, CheckCircle2, PhoneCall, Sparkles, ShieldCheck, Landmark, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const orionServices = [
   {
@@ -61,7 +62,8 @@ export default function NriServicesPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
+      <ScrollReveal>
+<section className="relative pt-48 lg:pt-56 pb-20 overflow-hidden bg-white border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-6">
             <Sparkles className="w-4 h-4 text-amber-500" />
@@ -87,9 +89,11 @@ export default function NriServicesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* The 8 Core Services Grid */}
-      <section className="py-24 bg-slate-50 relative">
+      <ScrollReveal>
+<section className="py-24 bg-slate-50 relative">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {orionServices.map((srv, idx) => (
@@ -108,9 +112,11 @@ export default function NriServicesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* Why Investors Choose Orion & Our Promise */}
-      <section className="py-24 bg-white border-t border-slate-200">
+      <ScrollReveal>
+<section className="py-24 bg-white border-t border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
@@ -145,6 +151,7 @@ export default function NriServicesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       <Footer />
     </div>

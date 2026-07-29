@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Globe, Shield, Award, CheckCircle2, Users, Building2, Briefcase } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 // Safe core values using available icons
 const safeCoreValues = [
@@ -40,7 +41,8 @@ const staggerItem = {
 
 export function About() {
   return (
-    <section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
+    <ScrollReveal>
+<section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         {/* Header */}
@@ -158,5 +160,6 @@ export function About() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }

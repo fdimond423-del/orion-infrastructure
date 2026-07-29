@@ -2,6 +2,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { Target, Globe, Shield, Award, CheckCircle2, MapPin, Phone, Mail, Sparkles, Briefcase, Users, Building2 } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const imgBoardroom = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop";
 
@@ -11,7 +12,8 @@ export default function AboutPage() {
       <Navbar />
 
       {/* About Page Header */}
-      <section className="relative pt-48 lg:pt-56 pb-24 bg-white border-b border-slate-200 overflow-hidden">
+      <ScrollReveal>
+<section className="relative pt-48 lg:pt-56 pb-24 bg-white border-b border-slate-200 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
@@ -61,9 +63,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* Vision, Mission & Core Values Section */}
-      <section className="py-24 bg-slate-50 relative border-b border-slate-200">
+      <ScrollReveal>
+<section className="py-24 bg-slate-50 relative border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
@@ -115,9 +119,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* Corporate Leadership & USA Headquarters Desk */}
-      <section className="py-24 bg-white text-center">
+      <ScrollReveal>
+<section className="py-24 bg-white text-center">
         <div className="container mx-auto px-6 max-w-5xl space-y-10">
           <div>
             <span className="text-xs font-bold tracking-wider text-blue-600 uppercase block mb-2">
@@ -177,6 +183,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       <Footer />
     </div>

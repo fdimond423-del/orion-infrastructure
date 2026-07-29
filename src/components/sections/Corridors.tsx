@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Landmark, Building2, Factory, TrendingUp, ShieldCheck, Anchor, CheckCircle2 } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const corridors = [
   {
@@ -42,7 +43,8 @@ const corridors = [
 
 export function Corridors() {
   return (
-    <section className="py-24 bg-slate-50 relative border-b border-slate-200">
+    <ScrollReveal>
+<section className="py-24 bg-slate-50 relative border-b border-slate-200">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         <div className="text-center mb-16">
@@ -103,5 +105,6 @@ export function Corridors() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }

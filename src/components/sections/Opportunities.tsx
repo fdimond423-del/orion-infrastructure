@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HomeIcon, DollarSign, Building, Factory, Trees, CheckCircle2 } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const buildWealthMethods = [
   "Employment", "Entrepreneurship", "Small Businesses", "Retail Businesses", "Hospitality", "Commercial Investments"
@@ -44,7 +45,8 @@ export function Opportunities() {
   const currentCategory = categories.find(c => c.id === activeTab) || categories[0];
 
   return (
-    <section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
+    <ScrollReveal>
+<section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         {/* Build Wealth Abroad Intro */}
@@ -154,5 +156,6 @@ export function Opportunities() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }

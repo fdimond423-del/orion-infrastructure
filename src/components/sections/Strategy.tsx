@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, DollarSign, Building, Globe, Zap, LineChart } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const strategySteps = [
   { step: 'STEP 1', title: 'Build Income Overseas', desc: 'Generate income through employment, entrepreneurship, or business ownership.' },
@@ -11,7 +12,8 @@ const strategySteps = [
 
 export function Strategy() {
   return (
-    <section className="py-24 bg-slate-50 relative border-b border-slate-200">
+    <ScrollReveal>
+<section className="py-24 bg-slate-50 relative border-b border-slate-200">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         {/* Our Philosophy Section */}
@@ -82,5 +84,6 @@ export function Strategy() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }

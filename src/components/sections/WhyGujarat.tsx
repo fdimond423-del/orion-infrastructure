@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Factory, Anchor, Zap, Cpu, Car, Pill, Landmark, Dna, HardHat, Box, Building } from 'lucide-react';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const sectors = [
   { name: "Manufacturing", icon: Factory },
@@ -17,7 +18,8 @@ const sectors = [
 
 export function WhyGujarat() {
   return (
-    <section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
+    <ScrollReveal>
+<section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#0f172a 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
@@ -67,5 +69,6 @@ export function WhyGujarat() {
         </div>
       </div>
     </section>
+</ScrollReveal>
   );
 }

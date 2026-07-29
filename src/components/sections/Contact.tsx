@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, BookOpen, ChevronRight, MessageSquare } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const learningResources = [
   "Investment Guides", "Market Updates", "Industry Reports", "FAQs", "Buying Process", "NRI Resources", "Commercial Insights", "Infrastructure News"
@@ -17,7 +18,8 @@ const contactOptions = [
 
 export function Contact() {
   return (
-    <section className="py-24 bg-slate-50 relative border-b border-slate-200 overflow-hidden">
+    <ScrollReveal>
+<section className="py-24 bg-slate-50 relative border-b border-slate-200 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16">
           
@@ -106,5 +108,6 @@ export function Contact() {
         </div>
       </div>
     </section>
+</ScrollReveal>
   );
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Shield } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const reasons = [
   "Cross-border experience",
@@ -15,7 +16,8 @@ const reasons = [
 
 export function TrustSignals() {
   return (
-    <section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
+    <ScrollReveal>
+<section className="py-24 bg-white relative border-b border-slate-200 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
@@ -84,5 +86,6 @@ export function TrustSignals() {
         </div>
       </div>
     </section>
+</ScrollReveal>
   );
 }

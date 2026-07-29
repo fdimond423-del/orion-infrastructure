@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, RefreshCw, Zap, Building2 } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const modelSteps = [
   { step: '01', title: 'Acquire Businesses' },
@@ -13,7 +14,8 @@ const modelSteps = [
 
 export function Model() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
+    <ScrollReveal>
+<section className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
         <div className="grid lg:grid-cols-12 gap-16 items-center">
@@ -97,5 +99,6 @@ export function Model() {
         </div>
       </div>
     </section>
+</ScrollReveal>
   );
 }

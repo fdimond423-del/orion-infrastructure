@@ -4,6 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Building, Home as HomeIcon, Landmark, Factory, Trees, ArrowRight, ShieldCheck, CheckCircle2, MapPin, Sparkles, DollarSign } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 // Distinct Professional Real Estate Unsplash Images
 const images = {
@@ -110,7 +111,8 @@ export default function OpportunitiesPage() {
       <Navbar />
 
       {/* Monumental Header */}
-      <section className="relative pt-48 lg:pt-56 pb-20 bg-white overflow-hidden border-b border-slate-200">
+      <ScrollReveal>
+<section className="relative pt-48 lg:pt-56 pb-20 bg-white overflow-hidden border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
           <div className="max-w-4xl space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide">
@@ -147,9 +149,11 @@ export default function OpportunitiesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       {/* Dynamic Selected Category Content */}
-      <section className="py-20 bg-slate-50 relative">
+      <ScrollReveal>
+<section className="py-20 bg-slate-50 relative">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -236,9 +240,11 @@ export default function OpportunitiesPage() {
           </AnimatePresence>
         </div>
       </section>
+</ScrollReveal>
 
       {/* Advisory Desk Banner */}
-      <section className="py-16 bg-white border-t border-slate-200 text-center">
+      <ScrollReveal>
+<section className="py-16 bg-white border-t border-slate-200 text-center">
         <div className="container mx-auto px-6 max-w-4xl space-y-6">
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Need Customized Asset Verification?</h3>
           <p className="text-slate-600 text-base max-w-2xl mx-auto">
@@ -257,6 +263,7 @@ export default function OpportunitiesPage() {
           </div>
         </div>
       </section>
+</ScrollReveal>
 
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Briefcase, ArrowUpRight, Shield, CheckCircle2 } from 'lucide-react';
 import { Link } from 'wouter';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 const usBusinesses = [
   { name: 'Gas Stations & Travel Plazas', tag: 'High Liquid Surplus' },
@@ -19,7 +20,8 @@ const steps = [
 
 export function BusinessServices() {
   return (
-    <section className="py-28 bg-white border-b border-slate-200 relative overflow-hidden">
+    <ScrollReveal>
+<section className="py-28 bg-white border-b border-slate-200 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         
         {/* Luxury Outer Presentation Console - Pure White Theme */}
@@ -123,5 +125,6 @@ export function BusinessServices() {
 
       </div>
     </section>
+</ScrollReveal>
   );
 }
