@@ -223,6 +223,42 @@ export default function GujaratGrowthPage() {
       </section>
 </ScrollReveal>
 
+<ScrollReveal>
+  <section className="py-24 bg-slate-50 border-b border-slate-200">
+    <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div className="text-center mb-16">
+        <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-blue-100 text-blue-700 uppercase tracking-widest inline-block mb-4">
+          EXCLUSIVE GALLERY
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">GIFT City Showcase</h2>
+        <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          Take an exclusive look into India's premier international financial services center and smart city development. High-quality infrastructure supporting global banking, IT, and premium residential spaces.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1, 2, 3, 4, 5, 6].map((num) => (
+          <div key={num} className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group">
+            <img 
+              src={`/gift-city/gift-${num}.jpeg`} 
+              alt={`GIFT City View ${num}`} 
+              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+            />
+          </div>
+        ))}
+        {/* 7th image spans full width */}
+        <div className="overflow-hidden rounded-2xl shadow-sm border border-slate-200 bg-white group md:col-span-2 lg:col-span-3">
+          <img 
+            src={`/gift-city/gift-7.jpeg`} 
+            alt={`GIFT City Panorama`} 
+            className="w-full aspect-video md:aspect-[21/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</ScrollReveal>
+
       <Footer />
     </div>
   );
