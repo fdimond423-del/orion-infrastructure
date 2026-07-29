@@ -6,21 +6,17 @@ export function WelcomePopup() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show only once per session
-    const hasSeenPopup = sessionStorage.getItem('orion_welcome_seen');
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-        sessionStorage.setItem('orion_welcome_seen', 'true');
-      }, 1000); 
-      return () => clearTimeout(timer);
-    }
+    // Show the popup exactly as the loading screen finishes
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 600); 
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 font-sans">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 font-sans">
           {/* Backdrop */}
           <motion.div 
             initial={{ opacity: 0 }}
