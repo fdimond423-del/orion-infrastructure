@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import { Globe, MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 export function Footer() {
   return (
@@ -11,7 +12,7 @@ export function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center mb-2">
-              <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-16 w-auto object-contain drop-shadow-sm" />
+              <img src={logo} alt="Orion Biz Infrastructure" className="h-16 w-auto object-contain drop-shadow-sm" />
             </div>
             <p className="text-sm leading-relaxed font-medium">
               Connecting North American operational cash flow to premier Indian institutional assets through One Trade 360 and Global Business Service.

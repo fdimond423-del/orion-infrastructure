@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, X, Globe, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, PhoneCall } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/assets/logo.png';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +56,7 @@ export function Navbar() {
           
           {/* Logo Section */}
           <Link href="/" className="z-50 relative group flex items-center">
-            <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-20 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
+            <img src={logo} alt="Orion Biz Infrastructure" className="h-20 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}

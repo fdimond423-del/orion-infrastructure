@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import logo from '@/assets/logo.png';
 
 export function Loader() {
   const [progress, setProgress] = useState(0);
@@ -55,7 +56,7 @@ export function Loader() {
               <motion.img 
                 animate={{ rotateY: [0, 10, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                src="/logo.png" 
+                src={logo} 
                 alt="Orion Biz Infrastructure" 
                 className="w-full h-full object-contain"
               />
