@@ -14,6 +14,7 @@ import StrategyPage from '@/pages/StrategyPage';
 import { Loader } from '@/components/Loader';
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { WelcomePopup } from '@/components/WelcomePopup';
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ function AppContent() {
 
   return (
     <WouterRouter base={import.meta.env.BASE_URL ? import.meta.env.BASE_URL.replace(/\/$/, '') : ''}>
+      <WelcomePopup />
       <NavigationHandler onNavigate={handleNavigation} />
       <AnimatePresence>
         {loading && <Loader key="loader" />}
