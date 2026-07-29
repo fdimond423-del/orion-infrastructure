@@ -53,7 +53,7 @@ export function Navbar() {
           
           {/* Logo Section */}
           <Link href="/" className="z-50 relative group flex items-center">
-            <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-12 w-auto object-contain drop-shadow-sm transition-transform group-hover:scale-105" />
+            <img src="/logo.png" alt="Orion Biz Infrastructure" className="h-20 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}

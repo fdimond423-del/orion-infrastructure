@@ -5,8 +5,8 @@ export function Loader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Elegant loading simulation
-    const duration = 1200; // 1.2 seconds total load time
+    // Elegant loading simulation set to 3 seconds exactly as requested
+    const duration = 3000; // 3 seconds total load time
     const intervalTime = 30;
     const increment = 100 / (duration / intervalTime);
 
@@ -28,7 +28,7 @@ export function Loader() {
       {progress < 100 && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.6, ease: "easeInOut", delay: 0.2 } }}
+          exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut", delay: 0.2 } }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
         >
           {/* Subtle background element */}
@@ -36,17 +36,28 @@ export function Loader() {
           
           <div className="relative z-10 flex flex-col items-center w-full max-w-[280px] sm:max-w-xs px-6">
             
-            {/* Logo Display */}
+            {/* Animated Logo Display */}
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 10 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center mb-10"
+              initial={{ scale: 0.9, opacity: 0, y: 10 }}
+              animate={{ 
+                scale: [0.9, 1.05, 1], 
+                opacity: 1, 
+                y: [10, -5, 0],
+                filter: ['drop-shadow(0px 0px 0px rgba(0,124,220,0))', 'drop-shadow(0px 10px 20px rgba(0,124,220,0.2))', 'drop-shadow(0px 5px 10px rgba(0,124,220,0.1))']
+              }}
+              transition={{ 
+                duration: 2.5, 
+                ease: "easeInOut",
+                times: [0, 0.5, 1]
+              }}
+              className="w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center mb-10"
             >
-              <img 
+              <motion.img 
+                animate={{ rotateY: [0, 10, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 src="/logo.png" 
                 alt="Orion Biz Infrastructure" 
-                className="w-full h-full object-contain filter drop-shadow-sm"
+                className="w-full h-full object-contain"
               />
             </motion.div>
 
@@ -70,9 +81,15 @@ export function Loader() {
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ delay: 0.4 }}
-               className="mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]"
+               className="mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2"
             >
-              Initializing Portal
+              <span>Initializing Portal</span>
+              <motion.span 
+                animate={{ opacity: [0, 1, 0] }} 
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                ...
+              </motion.span>
             </motion.div>
 
           </div>
