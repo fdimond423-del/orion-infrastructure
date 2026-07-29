@@ -19,9 +19,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <GiftCityHighlights />
         <About />
         <Opportunities />
-        <GiftCityHighlights />
         <Corridors />
         <Strategy />
         <Model />
