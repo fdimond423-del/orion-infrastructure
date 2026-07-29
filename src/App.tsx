@@ -10,6 +10,7 @@ import GujaratGrowthPage from '@/pages/GujaratGrowthPage';
 import NriServicesPage from '@/pages/NriServicesPage';
 import ResourcesPage from '@/pages/ResourcesPage';
 import ContactPage from '@/pages/ContactPage';
+import StrategyPage from '@/pages/StrategyPage';
 import { Loader } from '@/components/Loader';
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
@@ -21,6 +22,7 @@ function NavigationHandler({ onNavigate }: { onNavigate: () => void }) {
 
   useEffect(() => {
     onNavigate();
+    window.scrollTo(0, 0);
   }, [location]);
 
   return null;
@@ -33,7 +35,7 @@ function AppContent() {
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 750);
+    }, 650);
     return () => clearTimeout(timer);
   };
 
@@ -43,13 +45,16 @@ function AppContent() {
       <AnimatePresence>
         {loading && <Loader key="loader" />}
       </AnimatePresence>
-      <div>
+      <div className="bg-[#0A1128] min-h-screen text-slate-900 selection:bg-blue-500/30">
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/strategy" component={StrategyPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/opportunities" component={OpportunitiesPage} />
           <Route path="/gujarat-growth" component={GujaratGrowthPage} />
+          <Route path="/gujarat" component={GujaratGrowthPage} />
           <Route path="/nri-services" component={NriServicesPage} />
+          <Route path="/services" component={NriServicesPage} />
           <Route path="/resources" component={ResourcesPage} />
           <Route path="/contact" component={ContactPage} />
           <Route component={NotFound} />

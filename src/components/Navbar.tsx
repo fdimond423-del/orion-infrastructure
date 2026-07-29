@@ -1,18 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Menu, X, ArrowUpRight, Phone, ShieldCheck } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const navLinks = [
-  { name: 'HOME', path: '/', isHash: false },
-  { name: 'INVESTMENT STRATEGY', path: '/strategy', isHash: false },
-  { name: 'NRI SERVICES', path: '/services', isHash: false },
-  { name: 'GUJARAT GROWTH', path: '/gujarat', isHash: false },
-  { name: 'OPPORTUNITIES', path: '/opportunities', isHash: false },
-  { name: 'RESOURCES', path: '/resources', isHash: false },
-  { name: 'ABOUT US', path: '/about', isHash: false },
-  { name: 'CONTACT', path: '/contact', isHash: false },
-];
+import { Menu, X, Globe, ChevronRight } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,145 +15,115 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { name: "About Orion", path: "/about" },
+    { name: "Investment Opportunities", path: "/opportunities" },
+    { name: "Gujarat Growth", path: "/gujarat-growth" },
+    { name: "NRI Services", path: "/nri-services" },
+    { name: "Resources", path: "/resources" }
+  ];
+
+  const NavItem = ({ name, path }: { name: string, path: string }) => {
+    const isActive = location === path || (path !== '/' && location.startsWith(path));
+    return (
+      <Link 
+        href={path}
+        className={`relative text-sm font-semibold transition-colors px-2 py-1 ${
+          isActive ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
+        }`}
+      >
+        {name}
+        {isActive && (
+          <span className="absolute -bottom-1.5 left-2 right-2 h-[2px] bg-blue-600 rounded-full" />
+        )}
+      </Link>
+    );
+  };
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        isScrolled 
-          ? 'py-3 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm' 
-          : 'py-5 bg-gradient-to-b from-white/95 via-white/80 to-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <nav className="flex items-center justify-between gap-4">
+    <>
+      <nav 
+        className={`fixed w-full z-50 transition-all duration-300 font-sans ${
+          isScrolled 
+            ? 'py-3 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200' 
+            : 'py-5 bg-white/80 backdrop-blur-sm border-b border-transparent'
+        }`}
+      >
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl flex items-center justify-between">
           
-          {/* Brand Logo - Enlarged and Centered Align */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="h-14 w-auto sm:h-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <img 
-                src={`${import.meta.env.BASE_URL}logo.png`} 
-                alt="Orion Infrastructure" 
-                className="h-full w-auto object-contain filter drop-shadow-sm" 
-              />
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-3 z-50 relative group">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
+              <Globe className="w-6 h-6" />
             </div>
-            <div className="hidden xl:flex flex-col border-l border-slate-200 pl-3.5">
-              <span className="font-serif font-bold text-base text-[#0A1128] tracking-tight leading-tight">ORION</span>
-              <span className="text-[10px] font-mono font-extrabold tracking-[0.2em] text-[#007CDC] uppercase">INFRASTRUCTURE</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-lg text-slate-900 leading-none tracking-tight">ORION</span>
+              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mt-0.5">BIZ INFRASTRUCTURE</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Centered) */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/80 shadow-inner">
-            {navLinks.map((link) => {
-              const isActive = location === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.path}
-                  className={`px-4 py-2 rounded-full text-xs font-mono font-bold tracking-wider transition-all duration-300 relative ${
-                    isActive 
-                      ? 'bg-white text-[#007CDC] shadow-sm font-black' 
-                      : 'text-slate-600 hover:text-[#0A1128] hover:bg-white/60'
-                  }`}
-                >
-                  {link.name}
-                  {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#007CDC]" />
-                  )}
-                </Link>
-              );
-            })}
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-10">
+            {navLinks.map(link => (
+              <NavItem key={link.name} name={link.name} path={link.path} />
+            ))}
           </div>
 
-          {/* Executive Action CTA */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
-            <a 
-              href="tel:+16096618318" 
-              className="hidden lg:flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-50 hover:bg-blue-100 text-[#007CDC] text-xs font-mono font-bold border border-blue-200 transition-colors"
-              title="USA Direct Headquarters Desk"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>+1-609-661-8318</span>
-            </a>
+          {/* Desktop CTA (Simplified) */}
+          <div className="hidden lg:flex items-center gap-6">
             <Link 
-              href="/contact" 
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#007CDC] to-blue-600 text-white font-mono font-bold text-xs uppercase tracking-wider hover:shadow-[0_4px_20px_rgba(0,124,220,0.35)] hover:scale-105 transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+              href="/contact"
+              className="px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 shadow-sm hover:shadow transition-all flex items-center gap-2"
             >
-              <span>ONE TRADE 360</span>
-              <ArrowUpRight className="w-4 h-4 text-emerald-400" />
+              <span>Contact Desk</span>
+              <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* Mobile Menu Trigger Button */}
-          <button
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden relative z-50 p-2 text-slate-900 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-2xl bg-slate-100 border border-slate-200 text-[#0A1128] hover:bg-blue-50 hover:text-[#007CDC] transition-colors focus:outline-none shadow-xs"
-            aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
+        </div>
+      </nav>
 
-        </nav>
+      {/* Mobile Menu Drawer */}
+      <div 
+        className={`fixed inset-0 bg-white z-40 transition-transform duration-500 lg:hidden font-sans ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full px-6 pt-28 pb-12 overflow-y-auto">
+          <div className="flex flex-col gap-2">
+            {navLinks.map(link => (
+              <Link 
+                key={link.name} 
+                href={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`py-4 border-b border-slate-100 flex items-center justify-between font-bold text-lg ${
+                  location === link.path ? 'text-blue-600' : 'text-slate-900'
+                }`}
+              >
+                <span>{link.name}</span>
+                <ChevronRight className="w-5 h-5 text-slate-400" />
+              </Link>
+            ))}
+          </div>
+          
+          <div className="mt-auto pt-8">
+            <Link 
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-4 rounded-xl bg-blue-600 text-white font-bold text-sm text-center block shadow-sm"
+            >
+              SCHEDULE CONSULTATION
+            </Link>
+          </div>
+        </div>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white/95 backdrop-blur-2xl border-b border-slate-200 overflow-hidden shadow-2xl"
-          >
-            <div className="container mx-auto px-6 py-6 flex flex-col space-y-3">
-              <div className="text-xs font-mono text-[#007CDC] font-bold tracking-[0.2em] uppercase pb-2 border-b border-slate-100 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>NRI INVESTMENT NAVIGATION</span>
-              </div>
-              {navLinks.map((link) => {
-                const isActive = location === link.path;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`px-5 py-3 rounded-2xl font-mono text-xs font-extrabold tracking-wider transition-all flex items-center justify-between ${
-                      isActive 
-                        ? 'bg-blue-50 text-[#007CDC] border border-blue-200 shadow-xs' 
-                        : 'text-slate-700 hover:bg-slate-100'
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    {isActive ? (
-                      <span className="w-2 h-2 rounded-full bg-[#007CDC]" />
-                    ) : (
-                      <ArrowUpRight className="w-4 h-4 text-slate-400" />
-                    )}
-                  </Link>
-                );
-              })}
-              
-              <div className="pt-4 mt-2 border-t border-slate-200 flex flex-col gap-3">
-                <a 
-                  href="tel:+16096618318" 
-                  className="w-full py-3 px-4 rounded-2xl bg-slate-100 text-[#0A1128] font-mono text-xs font-bold flex items-center justify-center gap-2 border border-slate-200"
-                >
-                  <Phone className="w-4 h-4 text-[#007CDC]" />
-                  <span>USA HQ: +1-609-661-8318 (EDISON, NJ)</span>
-                </a>
-                <Link 
-                  href="/contact" 
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-3.5 px-6 rounded-2xl bg-[#0A1128] text-white text-center font-mono text-xs font-extrabold uppercase tracking-widest shadow-lg flex items-center justify-center gap-2"
-                >
-                  <span>ACCESS CLIENT DESK (ONE TRADE 360)</span>
-                  <ArrowUpRight className="w-4 h-4 text-emerald-400" />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+    </>
   );
 }

@@ -1,352 +1,180 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { motion } from 'framer-motion';
-import { Globe2, ShieldCheck, TrendingUp, Building2, Award, Users, ArrowRight, CheckCircle2, Landmark, BarChart3, Briefcase, Zap, MapPin, Scale, FileText } from 'lucide-react';
+import { Target, Globe, Shield, Award, CheckCircle2, MapPin, Phone, Mail, Sparkles, Briefcase, Users, Building2 } from 'lucide-react';
 import { Link } from 'wouter';
 
+const imgBoardroom = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop";
+
 export default function AboutPage() {
-  const strategySteps = [
-    {
-      step: "01",
-      title: "Build U.S. Cash Flow Engines",
-      desc: "Own and operate dependable, high-turnover U.S. enterprises such as Gas Stations, Convenience Stores, Hospitality Motels, Franchised Restaurants, and Logistics Truck Stops that generate recurring daily liquid surplus.",
-      icon: <Briefcase className="w-7 h-7 text-[#007cdc]" />
-    },
-    {
-      step: "02",
-      title: "Disciplined Reinvestment Channeling",
-      desc: "Rather than allowing operating profits to stagnate in low-yielding cash accounts subject to inflationary erosion, systematically channel surplus through legally cleared NRE/NRO pathways into institutionally vetted infrastructure.",
-      icon: <TrendingUp className="w-7 h-7 text-[#007cdc]" />
-    },
-    {
-      step: "03",
-      title: "Scale Gujarat Infrastructure Assets",
-      desc: "Acquire Grade-A commercial towers in GIFT City IFSC, smart industrial plots in Dholera SIR and Sanand, and prime luxury residential villas across Ahmedabad during unprecedented economic expansion.",
-      icon: <Building2 className="w-7 h-7 text-[#007cdc]" />
-    },
-    {
-      step: "04",
-      title: "Generational Sovereign Compounding",
-      desc: "Enjoy long-term capital appreciation, structured multinational tenant rental yields, optimal FEMA compliance, and enduring multi-generational family wealth across dual continents.",
-      icon: <Landmark className="w-7 h-7 text-[#007cdc]" />
-    }
-  ];
-
-  const corePillars = [
-    {
-      title: "Zero-Risk Title Vetting Protocol",
-      desc: "We enforce rigorous institutional governance. Before any property development is approved for our clientele, specialized real estate attorneys perform exhaustive 30-year title searches, complete RERA encumbrance verifications, and physical developer solvency audits.",
-      badge: "FIDUCIARY SAFETY"
-    },
-    {
-      title: "Synchronous Dual-Continent Desks",
-      desc: "With Global Business Service One Trade 360 headquartered at 1885 Lincoln Highway in Edison, New Jersey (USA), and active executive desks across Gujarat (India), our investors experience real-time assistance in both EST and IST timezones.",
-      badge: "BORDERLESS ADVISORY"
-    },
-    {
-      title: "FEMA & RBI Legal Alignment",
-      desc: "Navigating cross-border real estate compliance made seamless. We guide US Citizens, Overseas Citizens of India (OCI), and Non-Resident Indians (NRIs) through every statutory requirement of the Foreign Exchange Management Act and RBI repatriation pathways.",
-      badge: "STATUTORY PRECISION"
-    },
-    {
-      title: "Turnkey Passive Asset Governance",
-      desc: "You operate your U.S. business without distraction while our executive teams coordinate on-site property inspections, municipal tax assessments, corporate tenant leasing matchmaking, and annual compliance reporting thousands of miles away.",
-      badge: "COMPLETE PEACE OF MIND"
-    }
-  ];
-
-  const leadershipDesks = [
-    {
-      title: "USA Strategic Advisory Headquarters",
-      location: "Edison, New Jersey & Pennsylvania Node",
-      role: "U.S. Enterprise Profit Transition & Wealth Planning",
-      details: "Our American desks focus on understanding U.S. business operating cycles (gas station fuel margins, retail convenience turnover, motel seasonal occupancy) to formulate structured capital deployment schedules.",
-      contact: "+1-609-661-8318 | 1885 Lincoln Hwy, Edison NJ 08817"
-    },
-    {
-      title: "Gujarat Institutional Execution Desk",
-      location: "Ahmedabad & GIFT City Regional Headquarters",
-      role: "On-the-Ground Project Scouting & RERA Execution",
-      details: "Our Gujarat executive teams manage developer institutional pricing negotiations, on-site structural construction audits, sub-registrar official deed registration, and corporate lease facilitation.",
-      contact: "+91-95123-01869 | Ahmedabad Twin City & GIFT City Corridor"
-    }
-  ];
-
   return (
-    <div className="bg-white min-h-screen text-slate-700 overflow-x-hidden selection:bg-blue-500/20 selection:text-blue-900 font-sans">
+    <div className="bg-slate-50 text-slate-900 min-h-screen selection:bg-blue-600/20 font-sans">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative pt-36 pb-24 border-b border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-        <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-6xl text-center">
-          <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase bg-blue-50 px-5 py-2 rounded-full border border-blue-200 inline-block mb-6 shadow-xs">
-              CORPORATE PROFILE & GOVERNANCE
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-[#131238] mb-8 tracking-tight leading-[1.15]">
-              Transforming U.S. Business Profits into <span className="text-[#007cdc]">Sovereign Indian Infrastructure</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-600 font-normal max-w-3xl mx-auto leading-relaxed mb-10">
-              The true objective of U.S. enterprise operation is not merely generating active business profits, but systematically deploying surplus operating capital from gas stations, convenience stores, and franchised retail to construct permanent, high-yielding tangible real estate assets across Gujarat's economic transformation.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/opportunities"
-                className="px-9 py-4 rounded-full bg-[#007cdc] hover:bg-[#131238] text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl flex items-center gap-2"
-              >
-                <span>Explore Verified Opportunities</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="px-9 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-[#131238] font-bold text-sm uppercase tracking-wider transition-all duration-200 shadow-xs hover:shadow-sm"
-              >
-                Schedule Executive Advisory
-              </Link>
+
+      {/* About Page Header */}
+      <section className="relative pt-36 pb-24 bg-white border-b border-slate-200 overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wide">
+                <Sparkles className="w-4 h-4 text-amber-500" />
+                <span>ORION BIZ INFRASTRUCTURE™ • GLOBAL BUSINESS SERVICE</span>
+              </div>
+              
+              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+                Building Wealth Across <br />
+                <span className="text-blue-600">
+                  USA • Canada • UK • Australia • India
+                </span>
+              </h1>
+
+              <p className="text-base sm:text-xl text-slate-600 leading-relaxed">
+                Orion Biz Infrastructure is a dedicated cross-border investment platform engineered to connect North American and global enterprise capital with high-grade real estate and industrial infrastructure developments across Gujarat, India.
+              </p>
+
+              <div className="pt-4 flex flex-wrap gap-4">
+                <Link
+                  href="/opportunities"
+                  className="px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                  EXPLORE INVESTMENT OPPORTUNITIES
+                </Link>
+                <a 
+                  href="tel:+12722679492"
+                  className="px-8 py-4 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold text-sm hover:border-blue-600 hover:text-blue-600 transition-colors"
+                >
+                  CALL USA HQ: +1 272-267-9492
+                </a>
+              </div>
             </div>
-          </motion.div>
+
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+                <img src={imgBoardroom} alt="Orion Executive Boardroom" className="w-full h-[400px] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <span className="text-xs font-bold text-blue-600 uppercase">ONE TRADE 360 DIVISION</span>
+                  <h4 className="text-base font-bold text-slate-900 mt-1">Cross-Border Portfolio Structuring</h4>
+                  <p className="text-xs text-slate-600 mt-1">Direct coordination from Wilkes-Barre, PA to GIFT City, Ahmedabad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* The 4-Stage Orion Infrastructure Strategy */}
-      <section className="py-28 relative bg-white border-b border-slate-200">
+      {/* Vision, Mission & Core Values Section */}
+      <section className="py-24 bg-slate-50 relative border-b border-slate-200">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase block mb-3">
-              STRATEGIC REINVESTMENT FRAMEWORK
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#131238] mb-6">
-              How U.S. Enterprise Cash Flows Fuel Long-Term Compounding
-            </h2>
-            <p className="text-slate-600 text-base font-normal leading-relaxed">
-              We bridge two of the world's most robust economic landscapes: harvesting active liquid cash flow in North America and seeding institutional high-yield real estate capital across industrializing Gujarat.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {strategySteps.map((item, idx) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-400 transition-all duration-300 shadow-xs hover:shadow-xl flex flex-col justify-between group relative overflow-hidden bg-white"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full pointer-events-none group-hover:bg-blue-100/60 transition-all" />
-                
-                <div>
-                  <div className="flex items-center justify-between mb-8 relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
-                      {item.icon}
-                    </div>
-                    <span className="text-3xl font-serif font-bold text-slate-500 group-hover:text-[#007cdc] transition-colors">
-                      {item.step}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-serif font-bold text-[#131238] mb-4 group-hover:text-[#007cdc] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-slate-600 text-sm font-normal leading-relaxed mb-6">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 flex items-center gap-2 text-xs text-[#007cdc] font-bold">
-                  <CheckCircle2 className="w-4 h-4 text-[#007cdc]" />
-                  <span>Verified Orion Blueprint</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* NEW: Institutional Comparative Analysis & Market Reality Table */}
-      <section className="py-24 bg-slate-50 border-b border-slate-200">
-        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase block mb-3">
-              ECONOMIC ARCHETYPE & YIELD DIFFERENTIALS
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#131238] mb-4">
-              Why U.S. Entrepreneurs Pivot Capital Into Gujarat Real Estate
-            </h2>
-            <p className="text-slate-600 text-base font-normal">
-              A detailed comparative assessment illustrating why capital diversification from Western operating cash flows into Indian physical infrastructure offers superior risk-adjusted growth.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-3xl bg-white border border-slate-200 shadow-lg">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-blue-50/80 border-b border-slate-200 text-[#131238] text-xs uppercase tracking-wider font-bold">
-                  <th className="py-5 px-6 font-mono">Strategic Financial Metric</th>
-                  <th className="py-5 px-6 font-mono">Standard U.S. Real Estate / Cash Reserve</th>
-                  <th className="py-5 px-6 font-mono bg-blue-100/60 text-[#007cdc]">Orion Gujarat Corridor Strategy</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200 text-sm">
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-[#131238] flex items-center gap-2.5">
-                    <BarChart3 className="w-4 h-4 text-[#007cdc] shrink-0" />
-                    Capital Appreciation Velocity
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">3% to 5% annualized across saturated metropolitan zones with compressed capitalization rates.</td>
-                  <td className="py-5 px-6 font-bold text-[#131238] bg-blue-50/20">12% to 18% annualized in sovereign economic nodes (GIFT City, Dholera SIR, Sanand EV Corridor).</td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-[#131238] flex items-center gap-2.5">
-                    <Landmark className="w-4 h-4 text-[#007cdc] shrink-0" />
-                    Tax Efficiency & Repatriation
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">High State/Federal capital gains & estate taxes upon generational transfer or disposal.</td>
-                  <td className="py-5 px-6 font-bold text-[#131238] bg-blue-50/20">Structured NRE/NRO banking paths under FEMA with clear RBI tax treaty (DTAA) provisions & zero inheritance tax in India.</td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-[#131238] flex items-center gap-2.5">
-                    <Scale className="w-4 h-4 text-[#007cdc] shrink-0" />
-                    Asset Protection & Governance
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Vulnerable to high operational litigation exposure and fluctuating domestic interest rates.</td>
-                  <td className="py-5 px-6 font-bold text-[#131238] bg-blue-50/20">100% RERA verified title deeds, clean multi-decade solvency checking, and hard physical collateral ownership.</td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-[#131238] flex items-center gap-2.5">
-                    <FileText className="w-4 h-4 text-[#007cdc] shrink-0" />
-                    Management Overhead
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Intensive property maintenance, contractor disputes, and local zoning delays.</td>
-                  <td className="py-5 px-6 font-bold text-[#131238] bg-blue-50/20">Turnkey asset stewardship via One Trade 360 desks handling leasing, municipal oversight, and quarterly audit dossiers.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Institutional Pillars */}
-      <section className="py-28 relative bg-white border-b border-slate-200">
-        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 border-b border-slate-200 pb-8">
-            <div>
-              <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase block mb-3">
-                WHY CHOOSE ORION & ONE TRADE 360
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#131238]">
-                Fiduciary Excellence & Institutional Shield
-              </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <div className="p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <Target className="w-6 h-6" />
+              </div>
+              <span className="text-xs font-bold text-blue-600 tracking-wider uppercase block">OUR VISION</span>
+              <h3 className="text-2xl font-bold text-slate-900">Connecting Continents & Disciplined Wealth</h3>
+              <p className="text-slate-600 text-base leading-relaxed">
+                To connect investors, businesses, and infrastructure across North America and India while helping families build sustainable, long-term wealth through disciplined investing and multi-generational real estate allocation.
+              </p>
             </div>
-            <p className="text-slate-600 max-w-md text-sm font-normal leading-relaxed">
-              We distinguish ourselves from retail marketing platforms by enforcing strict institutional legal diligence, safeguarding investor principal through architectural oversight and proactive risk mitigation.
-            </p>
+
+            <div className="p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                <Shield className="w-6 h-6" />
+              </div>
+              <span className="text-xs font-bold text-emerald-600 tracking-wider uppercase block">OUR MISSION</span>
+              <h3 className="text-2xl font-bold text-slate-900">Trusted Cross-Border Advisory</h3>
+              <p className="text-slate-600 text-base leading-relaxed">
+                To become a trusted cross-border investment platform that supports global investors through education, professional guidance, commercial business opportunities, and carefully evaluated property opportunities across Gujarat.
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {corePillars.map((pillar, index) => (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.4 }}
-                className="p-9 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-400 transition-all duration-300 shadow-xs hover:shadow-xl group flex flex-col justify-between"
-              >
-                <div>
-                  <span className="text-[11px] font-mono font-bold tracking-[0.2em] text-[#007cdc] bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200 inline-block mb-5 shadow-xs">
-                    {pillar.badge}
-                  </span>
-                  <h3 className="text-2xl font-serif font-bold text-[#131238] mb-4 group-hover:text-[#007cdc] transition-colors">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-slate-600 text-base font-normal leading-relaxed">
-                    {pillar.desc}
-                  </p>
+          {/* 6 Core Values Grid */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold tracking-wider text-slate-500 uppercase">THE ORION PILLARS</span>
+            <h3 className="text-3xl font-bold text-slate-900 mt-1">Our Core Values</h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { name: "Transparency", icon: CheckCircle2, color: "text-blue-600 bg-blue-50" },
+              { name: "Professionalism", icon: Award, color: "text-emerald-600 bg-emerald-50" },
+              { name: "Long-Term Thinking", icon: Globe, color: "text-amber-600 bg-amber-50" },
+              { name: "Strategic Partnerships", icon: Users, color: "text-indigo-600 bg-indigo-50" },
+              { name: "Responsible Growth", icon: Building2, color: "text-purple-600 bg-purple-50" },
+              { name: "Client-First Approach", icon: Shield, color: "text-cyan-600 bg-cyan-50" }
+            ].map((val, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-white border border-slate-200 text-center space-y-3 shadow-sm">
+                <div className={`w-12 h-12 rounded-full mx-auto flex items-center justify-center ${val.color}`}>
+                  <val.icon className="w-6 h-6" />
                 </div>
-                <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-[#131238]/70">
-                  <span>Guaranteed Client Protection</span>
-                  <ShieldCheck className="w-4 h-4 text-[#007cdc]" />
-                </div>
-              </motion.div>
+                <h5 className="font-semibold text-xs uppercase text-slate-900">{val.name}</h5>
+              </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* Global Executive Desks Section */}
-      <section className="py-28 relative bg-slate-50 border-b border-slate-200">
-        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#007cdc] uppercase block mb-3">
-              DUAL-CONTINENT OPERATIONAL PRESENCE
+      {/* Corporate Leadership & USA Headquarters Desk */}
+      <section className="py-24 bg-white text-center">
+        <div className="container mx-auto px-6 max-w-5xl space-y-10">
+          <div>
+            <span className="text-xs font-bold tracking-wider text-blue-600 uppercase block mb-2">
+              VERIFIED INTERNATIONAL ADVISORY
             </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#131238] mb-6">
-              One Trusted USA & India Leadership Network
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
+              Twin Continent Advisory Desks
             </h2>
-            <p className="text-slate-600 text-base font-normal leading-relaxed">
-              Through Global Business Service One Trade 360, our dual-headquarters structure eliminates international communication latency, guarantees real-time banking coordination, and assures physical on-site project evaluation.
+            <p className="text-slate-600 text-base max-w-2xl mx-auto mt-3">
+              We provide seamless cross-border communication, legal due diligence, and builder verification across our offices.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
-            {leadershipDesks.map((desk, idx) => (
-              <motion.div
-                key={desk.title}
-                initial={{ opacity: 0, x: idx === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="p-10 rounded-3xl bg-white border border-slate-200 hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="p-4 rounded-2xl bg-blue-50 border border-blue-100 text-[#007cdc] shadow-xs">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-serif font-bold text-[#131238]">{desk.title}</h4>
-                      <span className="text-xs font-mono text-[#007cdc] font-bold">{desk.location}</span>
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+              <div className="flex items-center justify-between mb-6 border-b border-slate-200 pb-4">
+                <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">🇺🇸 USA HEADQUARTERS</span>
+                <span className="px-2.5 py-1 rounded-md bg-blue-100 text-blue-700 text-[10px] font-bold">ONE TRADE 360</span>
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-2">Global Business Service</h4>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                680, Hazel St, Wilkes-Barre,<br />
+                PA-18702 (United States of America)
+              </p>
+              <div className="space-y-3 pt-4 border-t border-slate-200 text-sm font-semibold">
+                <a href="tel:+12722679492" className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors">
+                  <Phone className="w-4 h-4 text-blue-500" />
+                  <span>USA: +1 272-267-9492</span>
+                </a>
+                <a href="mailto:Globalservicejjp4@gmail.com" className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors break-all">
+                  <Mail className="w-4 h-4 text-amber-500" />
+                  <span>Globalservicejjp4@gmail.com</span>
+                </a>
+              </div>
+            </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
-                    <span className="text-xs font-mono text-slate-500 font-semibold uppercase block mb-1">STRATEGIC FOCUS</span>
-                    <p className="text-sm font-bold text-[#131238]">{desk.role}</p>
-                  </div>
-
-                  <p className="text-slate-600 text-sm font-normal leading-relaxed mb-8">
-                    {desk.details}
-                  </p>
-                </div>
-
-                <div className="pt-5 border-t border-slate-200 font-mono text-xs text-[#007cdc] font-bold">
-                  {desk.contact}
-                </div>
-              </motion.div>
-            ))}
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+              <div className="flex items-center justify-between mb-6 border-b border-slate-200 pb-4">
+                <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">🇮🇳 INDIA ADVISORY DESK</span>
+                <span className="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-700 text-[10px] font-bold">GUJARAT CORRIDOR</span>
+              </div>
+              <h4 className="text-2xl font-bold text-slate-900 mb-2">Orion Gujarat Corporate Apex</h4>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                Ahmedabad Commercial Apex & GIFT City Node<br />
+                Gujarat, India
+              </p>
+              <div className="space-y-3 pt-4 border-t border-slate-200 text-sm font-semibold">
+                <a href="tel:+917984171515" className="flex items-center gap-2 text-slate-700 hover:text-emerald-600 transition-colors">
+                  <Phone className="w-4 h-4 text-emerald-500" />
+                  <span>India: +91 7984171515</span>
+                </a>
+                <Link href="/contact" className="flex items-center gap-2 text-blue-600 hover:underline">
+                  <span>Schedule Online Meeting Desk →</span>
+                </Link>
+              </div>
+            </div>
           </div>
-
-          {/* Bottom Action Box */}
-          <div className="mt-20 p-12 rounded-3xl bg-gradient-to-r from-blue-50 via-white to-slate-50 border border-slate-200 text-center relative overflow-hidden shadow-xl">
-            <h3 className="text-3xl font-serif font-bold text-[#131238] mb-4">Ready to Put Your Operating Cash Flow to Work?</h3>
-            <p className="text-slate-600 max-w-2xl mx-auto text-base font-normal mb-8">
-              Connect with our Edison, New Jersey executive desk today to request confidential RERA property dossiers across GIFT City, Ahmedabad, and Dholera SIR.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#007cdc] hover:bg-[#131238] text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105"
-            >
-              <span>Initiate Strategic Consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
         </div>
       </section>
 

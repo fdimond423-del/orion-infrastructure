@@ -23,7 +23,7 @@ export function BusinessServices() {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         
         {/* Luxury Outer Presentation Console */}
-        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0A1128] to-slate-950 text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-white via-[#0A1128] to-white text-slate-900 border border-slate-200 shadow-2xl relative overflow-hidden">
           
           {/* Ambient Radial Lights */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none" />
@@ -41,24 +41,24 @@ export function BusinessServices() {
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-xs font-mono font-bold tracking-[0.25em] uppercase mb-6 shadow-sm"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-300 text-xs font-sans tracking-wide font-bold tracking-[0.25em] uppercase mb-6 shadow-sm"
                 >
-                  <Briefcase className="w-3.5 h-3.5 text-[#007CDC]" />
+                  <Briefcase className="w-3.5 h-3.5 text-blue-600" />
                   <span>GLOBAL BUSINESS SERVICE | ONE TRADE 360</span>
                 </motion.div>
                 
-                <h3 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-                  Channel U.S. Commercial Trade Into <span className="text-[#007CDC]">Sovereign Gujarat Growth</span>
+                <h3 className="text-3xl sm:text-5xl font-sans font-bold text-slate-900 mb-6 leading-tight">
+                  Channel U.S. Commercial Trade Into <span className="text-blue-600">Sovereign Gujarat Growth</span>
                 </h3>
                 
-                <p className="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+                <p className="text-slate-600 text-base sm:text-lg font-normal leading-relaxed">
                   We specialize in serving Non-Resident Indians operating demanding commercial enterprises in the United States. We eliminate cross-border friction, connecting active dollar cash flows into secure, passive multi-generational property suites in Gujarat.
                 </p>
               </div>
 
               {/* USA Business Niche Tags */}
               <div className="space-y-3">
-                <div className="text-xs font-mono text-emerald-400 font-extrabold uppercase tracking-wider flex items-center gap-2">
+                <div className="text-xs font-sans tracking-wide text-emerald-400 font-extrabold uppercase tracking-wider flex items-center gap-2">
                   <Shield className="w-4 h-4 text-emerald-400" />
                   <span>SPECIALIZED AMERICAN NRI ENTERPRISE FOCUS:</span>
                 </div>
@@ -66,12 +66,12 @@ export function BusinessServices() {
                   {usBusinesses.map((biz, idx) => (
                     <div 
                       key={idx} 
-                      className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-blue-400 hover:bg-slate-800 transition-all shadow-sm"
+                      className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-blue-400 hover:bg-slate-50 transition-all shadow-sm"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#007CDC] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                       <div>
-                        <div className="text-xs font-bold text-white leading-tight">{biz.name}</div>
-                        <div className="text-[10px] font-mono text-slate-400">{biz.tag}</div>
+                        <div className="text-xs font-bold text-slate-900 leading-tight">{biz.name}</div>
+                        <div className="text-[10px] font-sans tracking-wide text-slate-500">{biz.tag}</div>
                       </div>
                     </div>
                   ))}
@@ -81,7 +81,7 @@ export function BusinessServices() {
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#007CDC] to-blue-600 hover:from-blue-600 hover:to-[#007CDC] text-white font-mono font-extrabold text-xs uppercase tracking-widest shadow-[0_0_30px_rgba(0,124,220,0.5)] transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#007CDC] to-blue-600 hover:from-blue-600 hover:to-[#007CDC] text-slate-900 font-sans tracking-wide font-extrabold text-xs uppercase tracking-widest shadow-[0_0_30px_rgba(0,124,220,0.5)] transition-all transform hover:-translate-y-0.5"
                 >
                   <span>BOOK ONE TRADE 360 ADVISORY SESSION</span>
                   <ArrowUpRight className="w-4 h-4 text-emerald-300" />
@@ -92,7 +92,7 @@ export function BusinessServices() {
 
             {/* Right Column: Interactive Flywheel Steps */}
             <div className="lg:col-span-5 flex flex-col space-y-4">
-              <div className="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest pb-2 border-b border-slate-800">
+              <div className="text-xs font-sans tracking-wide text-slate-500 font-bold uppercase tracking-widest pb-2 border-b border-slate-200">
                 ONE TRADE 360 EXECUTION PROTOCOL
               </div>
               
@@ -103,17 +103,17 @@ export function BusinessServices() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-start gap-5 p-5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800/80 hover:border-blue-400/50 transition-all shadow-sm group cursor-pointer"
+                  className="flex items-start gap-5 p-5 rounded-2xl bg-white/60 hover:bg-slate-50 border border-slate-200/80 hover:border-blue-400/50 transition-all shadow-sm group cursor-pointer"
                 >
-                  <div className="text-2xl font-mono font-black text-[#007CDC] group-hover:text-emerald-400 w-10 shrink-0 pt-0.5 transition-colors">
+                  <div className="text-2xl font-sans tracking-wide font-black text-blue-600 group-hover:text-emerald-400 w-10 shrink-0 pt-0.5 transition-colors">
                     {item.step}
                   </div>
                   <div className="space-y-1">
-                    <div className="text-white font-serif font-bold text-lg group-hover:text-blue-200 transition-colors flex items-center justify-between">
+                    <div className="text-slate-900 font-sans font-bold text-lg group-hover:text-blue-200 transition-colors flex items-center justify-between">
                       <span>{item.title}</span>
-                      <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 text-[#007CDC] transition-all" />
+                      <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 text-blue-600 transition-all" />
                     </div>
-                    <div className="text-xs font-normal text-slate-400 leading-relaxed">{item.desc}</div>
+                    <div className="text-xs font-normal text-slate-500 leading-relaxed">{item.desc}</div>
                   </div>
                 </motion.div>
               ))}

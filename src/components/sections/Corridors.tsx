@@ -1,175 +1,104 @@
-import React from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { MapPin, ArrowRight, ShieldCheck, Zap, Building2, TrendingUp, Anchor, Cpu } from 'lucide-react';
-import { Link } from 'wouter';
+import { motion } from 'framer-motion';
+import { Landmark, Building2, Factory, TrendingUp, ShieldCheck, Anchor, CheckCircle2 } from 'lucide-react';
 
 const corridors = [
   {
-    name: 'GIFT City & SEZ Apex',
-    tag: 'GLOBAL FINTECH & COMMERCIAL NODE',
-    desc: "India's first operational smart financial city and international SEZ. Pre-leased Grade-A office towers offering sovereign tax holidays, complete dollar repatriation, and exponential corporate demand.",
-    stat: '100% Tax Holiday Node',
+    title: "GIFT City",
+    subtitle: "India’s international financial services hub.",
+    icon: Landmark,
+    items: ["Financial Services", "Commercial Offices", "Residential Developments", "Hospitality"]
+  },
+  {
+    title: "Dholera SIR",
+    subtitle: "Master-planned industrial and smart city development.",
     icon: Building2,
-    color: 'from-blue-500 to-[#007CDC]'
+    items: ["Manufacturing", "Logistics", "Warehousing", "Industrial Development"]
   },
   {
-    name: 'Dholera Special Investment Region (SIR)',
-    tag: 'SEMICONDUCTOR & SMART MANUFACTURING',
-    desc: "India's largest planned industrial greenfield city twice the size of Ahmedabad. Strategically positioned along the Delhi-Mumbai Industrial Corridor with dedicated international cargo airport connectivity.",
-    stat: '920 Sq. Km Mega City',
-    icon: Cpu,
-    color: 'from-emerald-500 to-teal-600'
+    title: "Sanand Industrial",
+    subtitle: "One of Gujarat’s major manufacturing hubs.",
+    icon: Factory,
+    items: ["Automotive", "Electronics", "Engineering", "Industrial Supply Chains"]
   },
   {
-    name: 'Sanand Automotive & Tech Belt',
-    tag: 'AUTO HIVE & INDUSTRIAL WAREHOUSING',
-    desc: 'The Detroit of India and leading high-tech engineering hub. Home to mega manufacturing complexes from Tata, Ford, Micron, and global supply chains requiring premium warehousing and logistics parks.',
-    stat: '$15B+ Capital Invested',
-    icon: Zap,
-    color: 'from-blue-600 to-indigo-600'
-  },
-  {
-    name: 'Ahmedabad Twin-City Metropolitan Apex',
-    tag: 'RETAIL, RESIDENTIAL & COMMERCIAL HIVE',
-    desc: "Gujarat's commercial engine experiencing rapid infrastructure expansion. SG Highway, Sindhu Bhavan, and Ring Road commercial suites yielding superior rental yields and high asset appreciation.",
-    stat: 'Top NRI Capital Dest.',
+    title: "Ahmedabad",
+    subtitle: "Gujarat’s commercial capital.",
     icon: TrendingUp,
-    color: 'from-[#007CDC] to-blue-700'
+    items: ["Residential", "Commercial", "Office", "Retail", "Mixed-use"]
   },
   {
-    name: 'Gandhinagar Administrative & IT Gateway',
-    tag: 'PLANNED SOVEREIGN CAPITAL & IT HIVE',
-    desc: "The State's meticulously master-planned capital hosting expansive IT special economic zones, government secretariats, institutional campuses, and thriving high-income residential boulevards.",
-    stat: 'Zero Traffic & Green CIty',
+    title: "Gandhinagar",
+    subtitle: "Government, education, and technology center.",
     icon: ShieldCheck,
-    color: 'from-teal-500 to-emerald-600'
+    items: ["Residential", "Commercial", "Institutional", "Technology"]
   },
   {
-    name: 'Kandla & Mundra Port Maritime Hub',
-    tag: 'INDIA’S MAJOR MARITIME & LOGISTICS GATEWAY',
-    desc: 'Handling over 25% of India’s overall cargo trade, this coastal industrial mega-corridor offers high-yield maritime warehousing, transport logistics yards, and industrial infrastructure suites.',
-    stat: '25% of India Cargo Trade',
+    title: "Kandla Port Region",
+    subtitle: "Strategic logistics and export corridor.",
     icon: Anchor,
-    color: 'from-slate-700 to-[#0A1128]'
+    items: ["Warehousing", "Ports", "Logistics", "Industrial Development"]
   }
 ];
 
-function NodeCard({ item, index }: { item: typeof corridors[0]; index: number }) {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      style={{ perspective: 1000 }}
-      className="h-full"
-    >
-      <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="bg-white p-8 rounded-3xl h-full border border-slate-200 hover:border-blue-400/80 shadow-[0_10px_30px_-15px_rgba(15,23,42,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,124,220,0.18)] transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden"
-      >
-        <div style={{ transform: "translateZ(30px)" }}>
-          {/* Top Badge & Icon */}
-          <div className="flex items-center justify-between gap-4 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#007CDC] group-hover:bg-[#007CDC] group-hover:text-white transition-all shadow-xs">
-              <item.icon className="w-6 h-6" />
-            </div>
-            <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-[#0A1128] font-mono font-extrabold text-[11px] uppercase tracking-wide">
-              {item.stat}
-            </span>
-          </div>
-
-          <div className="text-[11px] font-mono font-extrabold text-[#007CDC] tracking-[0.15em] uppercase mb-2">
-            {item.tag}
-          </div>
-
-          <h3 className="text-2xl font-serif font-bold text-[#0A1128] mb-4 group-hover:text-[#007CDC] transition-colors">
-            {item.name}
-          </h3>
-
-          <p className="text-slate-600 text-sm leading-relaxed font-normal mb-8">
-            {item.desc}
-          </p>
-        </div>
-
-        <div style={{ transform: "translateZ(20px)" }} className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-[#0A1128] group-hover:text-[#007CDC]">
-          <span>EXPLORE ASSET DEEDS</span>
-          <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-[#007CDC] group-hover:text-white transition-all">
-            <ArrowRight className="w-4 h-4" />
-          </div>
-        </div>
-
-        {/* Subtle Background Glow on Hover */}
-        <div className="absolute -right-20 -bottom-20 w-48 h-48 bg-blue-500/5 rounded-full blur-[40px] pointer-events-none group-hover:bg-blue-500/15 transition-all duration-500" />
-      </motion.div>
-    </motion.div>
-  );
-}
-
 export function Corridors() {
   return (
-    <section id="corridors" className="py-28 bg-white relative overflow-hidden border-b border-slate-200">
-      
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+    <section className="py-24 bg-slate-50 relative border-b border-slate-200">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         
-        {/* Header Section */}
-        <div className="max-w-3xl mb-16 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#007CDC] text-xs font-mono font-bold tracking-[0.25em] uppercase mb-4 shadow-xs">
-            <MapPin className="w-3.5 h-3.5" />
-            <span>GUJARAT ECONOMIC MULTI-TRILLION NODES</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#0A1128] tracking-tight mb-6">
-            India's Most Advanced <span className="text-[#007CDC]">Growth Corridors</span>
-          </h2>
-          <p className="text-lg text-slate-600 font-normal leading-relaxed">
-            Strategically centered across India's premier high-growth state, these sovereign investment zones offer USA and global NRIs unmatched infrastructural compounding, title security, and institutional rental demand.
-          </p>
-        </div>
-
-        {/* 3D Interactive Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {corridors.map((item, idx) => (
-            <NodeCard key={item.name} item={item} index={idx} />
-          ))}
-        </div>
-
-        {/* Bottom Institutional Link */}
-        <div className="mt-16 text-center">
-          <Link
-            href="/gujarat"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0A1128] hover:bg-[#007CDC] text-white font-mono font-extrabold text-xs uppercase tracking-widest shadow-lg transition-all duration-300"
+        <div className="text-center mb-16">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-xs font-bold tracking-wider text-blue-600 uppercase block mb-3"
           >
-            <span>VIEW DEEP-DIVE GUJARAT CORRIDOR REPORT</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            STRATEGIC REGIONS
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-4xl font-bold text-slate-900"
+          >
+            Gujarat Growth Corridors
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {corridors.map((corridor, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-blue-300 transition-all flex flex-col h-full group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <corridor.icon className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">{corridor.title}</h3>
+              <p className="text-sm text-slate-500 font-semibold mb-6 h-10">
+                {corridor.subtitle}
+              </p>
+              
+              <div className="mt-auto pt-6 border-t border-slate-100">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3 block">
+                  FOCUS SECTORS
+                </span>
+                <ul className="space-y-3">
+                  {corridor.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm font-bold text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>
