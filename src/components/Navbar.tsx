@@ -31,7 +31,7 @@ export function Navbar() {
     return (
       <Link 
         href={path}
-        className={`relative text-sm font-semibold transition-colors px-2 py-1 ${
+        className={`relative text-[13px] xl:text-sm font-semibold transition-colors px-2 py-1 whitespace-nowrap ${
           isActive ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
         }`}
       >
@@ -48,19 +48,19 @@ export function Navbar() {
       <nav 
         className={`fixed w-full z-50 transition-all duration-300 font-sans ${
           isScrolled 
-            ? 'py-3 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200' 
-            : 'py-5 bg-white/80 backdrop-blur-sm border-b border-transparent'
+            ? 'py-2 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200' 
+            : 'py-4 bg-white/80 backdrop-blur-sm border-b border-transparent'
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-7xl flex items-center justify-between">
           
           {/* Logo Section */}
           <Link href="/" className="z-50 relative group flex items-center">
-            <img src={logo} alt="Orion Biz Infrastructure" className="h-20 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
+            <img src={logo} alt="Orion Biz Infrastructure" className="h-28 md:h-32 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
             {navLinks.map(link => (
               <NavItem key={link.name} name={link.name} path={link.path} />
             ))}
