@@ -28,22 +28,21 @@ export function Footer() {
               <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
                 <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
                 <div className="flex flex-col gap-1">
-                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">USA Desk</span>
-                  <a href="tel:+12722679492" className="text-sm hover:text-blue-600 transition-colors">+1 272-267-9492</a>
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">USA - Global Business Service</span>
+                  <a href="tel:+12722679492" className="text-sm hover:text-blue-600 transition-colors">Help desk - +1 272-267-9492 (USA)</a>
                   
-                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-2">Mayur Gadhavi (Marketing Pro)</span>
-                  <a href="tel:+919033568816" className="text-sm hover:text-blue-600 transition-colors">+91 90335 68816</a>
-                  
-                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-2">India Desk</span>
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-3">India</span>
+                  <p className="text-xs text-slate-600 font-medium">Mayur Gadhvi (Marketing Pro) - Real Estate Agent</p>
                   <a href="tel:+917984171515" className="text-sm hover:text-blue-600 transition-colors">+91 7984171515</a>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
                 <Mail className="w-5 h-5 text-amber-500 shrink-0" />
-                <div className="flex flex-col gap-1 w-full overflow-hidden">
-                  <a href="mailto:Rexpert.mayur@gmail.com" className="text-sm hover:text-blue-600 transition-colors truncate">Rexpert.mayur@gmail.com</a>
-                  <a href="mailto:Globalservicejjp4@gmail.com" className="text-sm hover:text-blue-600 transition-colors truncate">Globalservicejjp4@gmail.com</a>
-                </div>
+                <a href="mailto:Globalservicejjp4@gmail.com" className="text-sm hover:text-blue-600 transition-colors truncate">Globalservicejjp4@gmail.com</a>
+              </div>
+              <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+                <Globe className="w-5 h-5 text-emerald-500 shrink-0" />
+                <a href="https://Orioifraworld.com" target="_blank" rel="noreferrer" className="text-sm hover:text-blue-600 transition-colors truncate">Orioifraworld.com</a>
               </div>
             </div>
           </div>
