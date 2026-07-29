@@ -39,8 +39,8 @@ export function Hero() {
           />
         </AnimatePresence>
         
-        {/* Frosted Glass Overlay */}
-        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]" />
+        {/* Frosted Glass Overlay - Reduced opacity so images are clearly visible */}
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
         
         {/* Subtle glows on top of the frosted glass */}
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '6s' }} />
