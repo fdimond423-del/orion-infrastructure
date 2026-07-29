@@ -94,26 +94,29 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Schedule an Investment Consultation</h3>
               <p className="text-sm text-slate-500 mb-8">Fill out the form below to book an online meeting or request property information.</p>
               
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Thank you. Inquiry Sent to Global Business Service HQ."); }}>
+              <form className="space-y-6" action="https://formsubmit.co/Globalservicejjp4@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Inquiry via Orion Infrastructure Website!" />
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Orion Biz Infrastructure. We have received your inquiry and will get back to you shortly." />
+                
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Full Name</label>
-                    <input type="text" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="John Doe" />
+                    <input type="text" name="Full Name" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Phone Number</label>
-                    <input type="tel" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="+1 (555) 000-0000" />
+                    <input type="tel" name="Phone Number" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="+1 (555) 000-0000" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Email Address</label>
-                  <input type="email" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="john@example.com" />
+                  <input type="email" name="email" required className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="john@example.com" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Area of Interest</label>
-                  <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none">
+                  <select name="Area of Interest" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none">
                     <option>Residential Properties</option>
                     <option>Commercial Real Estate</option>
                     <option>Industrial & Logistics</option>
@@ -124,7 +127,7 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Message / Inquiry Details</label>
-                  <textarea required rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none" placeholder="Tell us about your investment goals..."></textarea>
+                  <textarea name="Message" required rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none" placeholder="Tell us about your investment goals..."></textarea>
                 </div>
 
                 <button type="submit" className="w-full py-4 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-sm hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
