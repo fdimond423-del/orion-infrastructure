@@ -38,7 +38,7 @@ export default function ContactPage() {
                 
                 <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 relative overflow-hidden">
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 uppercase tracking-widest border border-blue-200 inline-block mb-2">USA HEADQUARTERS</span>
-                  <h3 className="text-xl font-bold text-slate-900">Global Business Service & One Trade 360</h3>
+                  <h3 className="text-xl font-bold text-slate-900">Global Business Service</h3>
                   <div className="flex items-start gap-3 mt-4 text-slate-600 text-sm">
                     <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <p className="leading-relaxed">680, Hazel St, Wilkes-Barre,<br />PA-18702 (USA)</p>
@@ -48,12 +48,43 @@ export default function ContactPage() {
                     <a href="tel:+12722679492" className="font-semibold hover:text-blue-600 transition-colors">USA: +1 272-267-9492</a>
                   </div>
                   <div className="flex items-center gap-3 mt-4 text-slate-600 text-sm">
-                    <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <a href="tel:+917984171515" className="font-semibold hover:text-blue-600 transition-colors">India: +91 7984171515</a>
-                  </div>
-                  <div className="flex items-center gap-3 mt-4 text-slate-600 text-sm">
                     <Mail className="w-5 h-5 text-amber-500 shrink-0" />
                     <a href="mailto:Globalservicejjp4@gmail.com" className="font-semibold hover:text-blue-600 transition-colors break-all">Globalservicejjp4@gmail.com</a>
+                  </div>
+                </div>
+
+                <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 relative overflow-hidden mt-6">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 uppercase tracking-widest border border-emerald-200 inline-block mb-2">INDIA DESK</span>
+                  
+                  <div className="border-b border-slate-100 pb-4 mb-4">
+                    <h3 className="text-lg font-bold text-slate-900">Mayur Gadhavi</h3>
+                    <p className="text-xs font-semibold text-slate-500 uppercase mt-1">Real Estate Sales & Marketing Professional</p>
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                      IIM Kozhikode Alumnus<br/>
+                      Corporate Trainer | Guest Faculty | Adani University | CEPT University | Shivalik Institute of Real Estate
+                    </p>
+                    <div className="space-y-2 mt-4">
+                      <div className="flex items-center gap-3 text-slate-600 text-sm">
+                        <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
+                        <a href="tel:+919033568816" className="font-semibold hover:text-blue-600 transition-colors">+91 90335 68816</a>
+                      </div>
+                      <div className="flex items-center gap-3 text-slate-600 text-sm">
+                        <Mail className="w-4 h-4 text-amber-500 shrink-0" />
+                        <a href="mailto:Rexpert.mayur@gmail.com" className="font-semibold hover:text-blue-600 transition-colors break-all">Rexpert.mayur@gmail.com</a>
+                      </div>
+                      <div className="flex items-center gap-3 text-slate-600 text-sm">
+                        <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+                        <span>Gandhinagar | Ahmedabad, Gujarat</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-900 mb-2">India Support Desk</h3>
+                    <div className="flex items-center gap-3 text-slate-600 text-sm">
+                      <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <a href="tel:+917984171515" className="font-semibold hover:text-blue-600 transition-colors">+91 7984171515</a>
+                    </div>
                   </div>
                 </div>
               </div>
