@@ -66,7 +66,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex items-center gap-3 text-slate-600 text-sm">
                         <Globe className="w-4 h-4 text-blue-600 shrink-0" />
-                        <a href="https://Orioifraworld.com" target="_blank" rel="noreferrer" className="font-semibold hover:text-blue-600 transition-colors break-all">Orioifraworld.com</a>
+                        <a href="https://www.orioninfraworld.com" target="_blank" rel="noreferrer" className="font-semibold hover:text-blue-600 transition-colors break-all">www.orioninfraworld.com</a>
                       </div>
                       <div className="flex items-center gap-3 text-slate-600 text-sm">
                         <Mail className="w-4 h-4 text-amber-500 shrink-0" />

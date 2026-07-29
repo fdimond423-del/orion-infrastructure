@@ -42,7 +42,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-4 p-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
                 <Globe className="w-5 h-5 text-emerald-500 shrink-0" />
-                <a href="https://Orioifraworld.com" target="_blank" rel="noreferrer" className="text-sm hover:text-blue-600 transition-colors truncate">Orioifraworld.com</a>
+                <a href="https://www.orioninfraworld.com" target="_blank" rel="noreferrer" className="text-sm hover:text-blue-600 transition-colors truncate">www.orioninfraworld.com</a>
               </div>
             </div>
           </div>
