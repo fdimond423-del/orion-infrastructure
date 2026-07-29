@@ -1,17 +1,50 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Globe, Sparkles, Building2, Briefcase } from 'lucide-react';
 import { Link } from 'wouter';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
+import gift1 from '@/assets/gift-city/gift-1.jpeg';
+import gift2 from '@/assets/gift-city/gift-2.jpeg';
+import gift3 from '@/assets/gift-city/gift-3.jpeg';
+import gift7 from '@/assets/gift-city/gift-7.jpeg';
+
+const backgrounds = [gift7, gift1, gift3, gift2];
+
 export function Hero() {
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <ScrollReveal>
 <section className="relative min-h-[85vh] lg:min-h-screen pt-40 sm:pt-48 lg:pt-56 pb-16 lg:pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
       
-      {/* Very subtle ambient glows for a premium white feel */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '6s' }} />
-        <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-emerald-50/60 rounded-full blur-[120px]" />
+      {/* Dynamic Background Slider */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentBg}
+            src={backgrounds[currentBg]}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        
+        {/* Frosted Glass Overlay */}
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]" />
+        
+        {/* Subtle glows on top of the frosted glass */}
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '6s' }} />
+        <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
