@@ -22,7 +22,7 @@ export function WelcomePopup() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
           />
 
@@ -33,12 +33,13 @@ export function WelcomePopup() {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.6, bounce: 0.3 }}
             className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-br from-blue-600 to-emerald-500 opacity-10 pointer-events-none" />
             
             <button 
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur hover:bg-slate-100 rounded-full text-slate-500 transition-colors z-10 shadow-sm"
+              onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
+              className="absolute top-4 right-4 p-2 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 transition-colors z-[100] shadow-sm cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -57,15 +58,15 @@ export function WelcomePopup() {
               </p>
 
               <div className="w-full bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <p className="text-sm font-semibold text-slate-800 flex items-center justify-center gap-2 uppercase tracking-wide">
-                  <Sparkles className="w-4 h-4 text-emerald-500" />
-                  Earn Globally. Invest in Gujarat. Build Generational Wealth.
+                <p className="text-sm font-semibold text-slate-800 flex items-center justify-center gap-2 uppercase tracking-wide text-center">
+                  <Sparkles className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <span>Earn Globally. Invest in Gujarat.<br className="md:hidden" /> Build Generational Wealth.</span>
                 </p>
               </div>
 
               <button 
-                onClick={() => setIsOpen(false)}
-                className="mt-8 px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors hover:shadow-lg w-full sm:w-auto"
+                onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
+                className="mt-8 px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors hover:shadow-lg w-full sm:w-auto cursor-pointer"
               >
                 Explore Opportunities
               </button>
