@@ -16,6 +16,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Home", path: "/" },
     { name: "About Orion", path: "/about" },
     { name: "Investment Opportunities", path: "/opportunities" },
     { name: "Gujarat Growth", path: "/gujarat-growth" },
