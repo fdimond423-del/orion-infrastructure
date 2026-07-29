@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { MapPin, Phone, Mail, Building2, CheckCircle2, Sparkles, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Building2, CheckCircle2, Sparkles, Send, Globe } from 'lucide-react';
 import { ScrollReveal } from '@/components/ScrollReveal';
 
 export default function ContactPage() {
