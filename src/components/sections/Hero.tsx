@@ -6,7 +6,7 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 export function Hero() {
   return (
     <ScrollReveal>
-<section className="relative min-h-screen pt-48 lg:pt-56 pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
+<section className="relative min-h-[85vh] lg:min-h-screen pt-32 sm:pt-40 lg:pt-56 pb-16 lg:pb-24 overflow-hidden bg-slate-50 text-slate-900 font-sans flex items-center border-b border-slate-200">
       
       {/* Very subtle ambient glows for a premium white feel */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -15,17 +15,17 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Bold Typography & CTAs */}
-          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
             
             {/* VIP Brand Strip */}
             <motion.div 
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3"
             >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-200 shadow-sm text-xs font-bold text-blue-600 uppercase tracking-widest">
                 <Globe className="w-3.5 h-3.5 text-blue-500" />
@@ -42,12 +42,12 @@ export function Hero() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-[68px] font-bold text-slate-900 tracking-tight leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl lg:text-[68px] font-bold text-slate-900 tracking-tight leading-[1.15] lg:leading-[1.1]"
             >
-              Earn Globally. <br />
+              Earn Globally. <br className="hidden sm:block" />
               <span className="text-blue-600">
                 Invest in Gujarat.
-              </span> <br />
+              </span> <br className="hidden sm:block" />
               <span className="text-emerald-600">
                 Build Wealth.
               </span>
@@ -57,7 +57,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium"
+              className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium px-2 sm:px-0"
             >
               Orion Biz Infrastructure is a premier cross-border platform. We convert highly demanding active income in North America into passive, institutional assets in India.
             </motion.p>
@@ -67,18 +67,18 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-4 sm:pt-6 w-full sm:w-auto px-4 sm:px-0"
             >
               <Link 
                 href="/strategy"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-sm shadow-[0_10px_30px_-10px_rgba(0,124,220,0.4)] hover:shadow-[0_10px_40px_-10px_rgba(0,124,220,0.6)] hover:-translate-y-0.5 transition-all"
+                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-sm shadow-[0_10px_30px_-10px_rgba(0,124,220,0.4)] hover:shadow-[0_10px_40px_-10px_rgba(0,124,220,0.6)] hover:-translate-y-0.5 transition-all w-full sm:w-auto"
               >
                 <span>EXPLORE THE ENGINE MODEL</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all w-full sm:w-auto"
               >
                 <Briefcase className="w-4 h-4 text-slate-400" />
                 <span>CONTACT ADVISORY DESK</span>
