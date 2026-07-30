@@ -2,7 +2,6 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
 import { Opportunities } from '@/components/sections/Opportunities';
-import { Corridors } from '@/components/sections/Corridors';
 import { Strategy } from '@/components/sections/Strategy';
 import { Model } from '@/components/sections/Model';
 import { WhyGujarat } from '@/components/sections/WhyGujarat';
@@ -11,6 +10,7 @@ import { TrustSignals } from '@/components/sections/TrustSignals';
 import { BusinessServices } from '@/components/sections/BusinessServices';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
+import { ManufacturingProjects } from '@/components/sections/ManufacturingProjects';
 
 export default function Home() {
   return (
@@ -18,9 +18,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <ManufacturingProjects />
         <About />
         <Opportunities />
-        <Corridors />
         <Strategy />
         <Model />
         <WhyGujarat />

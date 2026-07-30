@@ -98,12 +98,8 @@ export function Footer() {
           </div>
 
         </div>
-
-        {/* Legal Disclaimer */}
+        
         <div className="pt-8 border-t border-slate-200">
-          <div className="bg-slate-100 p-6 rounded-xl text-xs text-slate-500 font-medium leading-relaxed">
-            <strong className="text-slate-700">LEGAL DISCLAIMER:</strong> Orion Biz Infrastructure, Global Business Service, and One Trade 360 serve as advisory and consulting platforms. Real estate investments involve inherent risks, including market fluctuations and illiquidity. We are not registered broker-dealers, financial advisors, or legal counsels. Past performance does not guarantee future results. All properties are subject to local RERA regulations and verification.
-          </div>
           
           <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-500">
             <p>© {new Date().getFullYear()} Orion Biz Infrastructure™ • All Rights Reserved.</p>
