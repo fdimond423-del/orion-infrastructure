@@ -2,19 +2,21 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, Router as WouterRouter, useLocation } from 'wouter';
-import NotFound from '@/pages/not-found';
-import Home from '@/pages/Home';
-import AboutPage from '@/pages/AboutPage';
-import OpportunitiesPage from '@/pages/OpportunitiesPage';
-import GujaratGrowthPage from '@/pages/GujaratGrowthPage';
-import NriServicesPage from '@/pages/NriServicesPage';
-import ResourcesPage from '@/pages/ResourcesPage';
-import ContactPage from '@/pages/ContactPage';
-import StrategyPage from '@/pages/StrategyPage';
-import { Loader } from '@/components/Loader';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { WelcomePopup } from '@/components/WelcomePopup';
+import { Loader } from '@/components/Loader';
+
+// Lazy load pages for faster initial loading
+const Home = lazy(() => import('@/pages/Home'));
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const OpportunitiesPage = lazy(() => import('@/pages/OpportunitiesPage'));
+const GujaratGrowthPage = lazy(() => import('@/pages/GujaratGrowthPage'));
+const NriServicesPage = lazy(() => import('@/pages/NriServicesPage'));
+const ResourcesPage = lazy(() => import('@/pages/ResourcesPage'));
+const ContactPage = lazy(() => import('@/pages/ContactPage'));
+const StrategyPage = lazy(() => import('@/pages/StrategyPage'));
+const NotFound = lazy(() => import('@/pages/not-found'));
 
 const queryClient = new QueryClient();
 
@@ -48,19 +50,21 @@ function AppContent() {
         {loading && <Loader key="loader" />}
       </AnimatePresence>
       <div className="bg-[#0A1128] min-h-screen text-slate-900 selection:bg-blue-500/30">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/strategy" component={StrategyPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/opportunities" component={OpportunitiesPage} />
-          <Route path="/gujarat-growth" component={GujaratGrowthPage} />
-          <Route path="/gujarat" component={GujaratGrowthPage} />
-          <Route path="/nri-services" component={NriServicesPage} />
-          <Route path="/services" component={NriServicesPage} />
-          <Route path="/resources" component={ResourcesPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route component={NotFound} />
-        </Switch>
+        <Suspense fallback={null}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/strategy" component={StrategyPage} />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/opportunities" component={OpportunitiesPage} />
+            <Route path="/gujarat-growth" component={GujaratGrowthPage} />
+            <Route path="/gujarat" component={GujaratGrowthPage} />
+            <Route path="/nri-services" component={NriServicesPage} />
+            <Route path="/services" component={NriServicesPage} />
+            <Route path="/resources" component={ResourcesPage} />
+            <Route path="/contact" component={ContactPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
       </div>
     </WouterRouter>
   );

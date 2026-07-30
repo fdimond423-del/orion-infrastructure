@@ -10,7 +10,7 @@ async function deploy() {
         await client.access({
             host: "82.197.83.206",
             user: "u484024635",
-            password: "Ffenil@123",
+            password: "Ffenil@1234",
             secure: false
         });
         console.log("Connected!");
